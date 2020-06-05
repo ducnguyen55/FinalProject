@@ -99,7 +99,7 @@ button:active {
     margin-bottom: 50px;
 }
 
-.BuyProduct .product,.BuyProduct .priceDiscount {
+.BuyProduct .product {
     font-size: 15px;
     margin: 0 auto;
     justify-content: center;

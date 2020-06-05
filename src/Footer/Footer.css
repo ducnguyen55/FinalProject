@@ -1,0 +1,141 @@
+.footer{
+	display: block;
+	height: 800px;
+	border-top: solid 2px;
+}
+.footer .info{
+	margin-left: 20px;
+	width: 50%;
+	float:left;
+	text-align: left;
+}
+.footer .info p{
+	font-size: 20px;
+}
+.footer .menu{
+	float: left;
+	text-align: left;
+	width: 40%;
+	font-family: 'Montserrat',sans-serif;
+	display: block;
+	position: relative;
+}
+.footer .TitleFooter{
+	padding-top: 10px;
+	font-size: 25px;
+	font-weight: 500;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+.footer .menu a{
+	border-bottom: dotted 1px;
+	border-bottom-width: 1px;
+	color: #000;
+	font-size: 20px;
+	margin-left: -40px;
+}
+@media (max-width: 1000px){
+	.footer .info {
+		width: 100%;
+	}
+	.footer .menu{
+		width: 100%;
+	}
+	.footer .TitleFooter{
+	text-transform: uppercase;
+	text-align: center;
+	}
+	.footer{
+		width: 100% !important;
+	}
+}
+@media (max-width: 500px){
+	.footer .info {
+		width: 500px;
+	}
+	.footer .menu{
+		width: 500px;
+	}
+	.footer .TitleFooter{
+	text-transform: uppercase;
+	text-align: center;
+	}
+	.footer{
+		width: 100% !important;
+	}
+}
+@media (max-width: 400px){
+	.footer .info {
+		width: 300px;
+	}
+	.footer .menu{
+		width: 300px;
+	}
+	.footer .TitleFooter{
+	text-transform: uppercase;
+	text-align: center;
+	}
+	.footer{
+		width: 100% !important;
+	}
+
+}
+.footer .Contact .ContactTitle{
+	text-align: center;
+	font-size: 20px;
+}
+.footer .Contact label{
+	font-size: 15px;
+}
+
+.footer .Contact{
+	width: 80%;
+	border: solid;
+	display: block;
+	height: 345px;
+}
+.Contact {
+	position: relative;
+	display: block;
+	text-align: left;
+}
+.footer #confirm{
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+	justify-content: center;
+	font-size: 20px;
+}
+
+.footer .Contact #fname{
+	margin-left: 5%;
+	height: 100%;
+	width: 80%;
+	font-size: 15px;
+	position: relative;
+}
+
+.footer .Contact #gmail{
+	margin-left: 1%;
+	height: 100%;
+	width: 80%;
+	font-size: 15px;
+	position: relative;
+}
+.footer .Contact #message{
+	height: 80px;
+	width: 100%;
+	font-size: 15px;
+	position: relative;
+}
+
+.footer .Contact #Submit{
+	margin: 0 auto;
+	display: block;
+	font-size: 15px;
+	border-radius: 5px;
+	background: #ADDAF1;
+	position: relative;
+	font-style: bold;
+	font-weight: 600;
+}

@@ -1,0 +1,52 @@
+.Contact .ContactTitle{
+    text-align: center;
+    font-size: 20px;
+}
+.Contact label{
+    font-size: 15px;
+}
+
+.Contact{
+    width: 80%;
+    border: solid;
+    display: block;
+    height: 345px;
+}
+.Contact {
+    position: relative;
+    display: block;
+    text-align: left;
+}
+
+.Contact #fname{
+    margin-left: 5%;
+    height: 100%;
+    width: 80%;
+    font-size: 15px;
+    position: relative;
+}
+
+.Contact #email{
+    margin-left: 1%;
+    height: 100%;
+    width: 80%;
+    font-size: 15px;
+    position: relative;
+}
+.Contact #message{
+    height: 80px;
+    width: 100%;
+    font-size: 15px;
+    position: relative;
+}
+
+.Contact #Submit{
+    margin: 0 auto;
+    display: block;
+    font-size: 15px;
+    border-radius: 5px;
+    background: #ADDAF1;
+    position: relative;
+    font-style: bold;
+    font-weight: 600;
+}

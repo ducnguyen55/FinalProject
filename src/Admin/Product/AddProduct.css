@@ -1,0 +1,17 @@
+.container .infoproduct .addbtn{
+	display: block;
+	width: 100%;
+	background-color: #EB6864;
+	border-color: #EB6864;
+	height: 40px;
+	font-size: 15px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
+.container .infoproduct .choose{
+	font-size: 20px;
+}
+.container .infoproduct .choose option{
+	font-size: 20px;
+}

@@ -1,0 +1,87 @@
+#logo{
+	max-width:20%;
+	z-index: -10000;
+	display: none;
+	position: relative;
+}
+.Menu{
+	display: block;
+	position: relative
+}
+.container img{
+	position: relative;
+	display: block;
+	justify-content: center;
+}
+.navbar{
+	margin-top: -35px;
+	justify-content: center !important;
+	color: #fff;
+	justify-content: center;
+	text-align: center !important;
+}
+.navbar ul li a{
+	color: #000;
+	font-size: 14px;
+	color: #767676;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.collapse .navbar-nav{
+	width: 100%;
+	text-align: center;
+	justify-content: center;
+}	
+.navbar button{
+	left: 0;
+	float: left;
+	top:0;
+	position: absolute;
+	border:none;
+	display: flex;
+}
+.navbar .icon{
+	max-width: 70%;
+}
+.container .account{
+	display: flex;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.container .account a{
+	font-size: 18px;
+	color: #000;
+	text-transform: uppercase;
+}
+.container .account span{
+	border: solid #fff;
+}
+.container .account #CustomerName{
+	color:blue;
+}
+@media (max-width: 992px)
+{
+	.navbar button{
+		margin-top: -30px;
+	}
+	.container .account{
+		display: none;
+	}
+}
+
+@media (max-width: 767px)
+{
+	.navbar button{
+		margin-top: -20px;
+	}
+}
+@media (max-width: 540px)
+{
+	.navbar button{
+		margin-top: -20px;
+	}
+}

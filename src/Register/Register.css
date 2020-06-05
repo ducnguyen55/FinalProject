@@ -1,0 +1,45 @@
+.Register-Form .container {
+	margin: 50px auto;
+	display: block;
+	position: relative;
+}
+.Register-Form .container .Title-register{
+	text-align: center !important;
+}
+
+.Register-Form .container .Title-register i::after{
+	content: 'Register';
+	margin-left: 10px;
+	font-size: 35px;
+}
+.container .register {
+	border: solid 1px;
+	padding: 1.25rem;
+}
+.container .register div{
+	display: block;
+}
+
+.container .register input{
+	display: block;
+	width: 100%;
+	height: 40px;
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+}
+.container .register button{
+	display: block;
+	width: 100%;
+	background-color: #EB6864;
+	border-color: #EB6864;
+	height: 40px;
+	font-size: 15px;
+	margin-top: 0;
+	margin-bottom: 25px;
+}
+
+.container .register .Info a{
+	margin-left: 5px;
+}

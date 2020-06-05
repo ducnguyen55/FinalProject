@@ -1,0 +1,24 @@
+.container h2{
+	text-align: center !important;
+}
+.Title::before{
+	content: '';
+	height: 1px;
+	width: 50px;
+	background: #000;
+	position: absolute;
+	margin-left: -100px;
+	top: 20px;
+}
+.Title::after{
+	content: '';
+	height: 1px;
+	width: 50px;
+	background: #000;
+	position: absolute;
+	margin-left: 50px;
+	top: 20px;
+}
+.Title{
+	margin-bottom: 25px;
+}

@@ -1,0 +1,26 @@
+.Menu{
+  border-bottom: solid 1px;
+}
+
+.Background{
+  margin-bottom: 50px;  
+}
+
+.Product{
+	justify-content: center;
+	text-align: center;
+	padding-right: 15px;
+	padding-left: 15px;
+	display: block;
+	position: relative;
+}
+
+.NewProduct{
+	display: block;
+	position: relative;
+}
+
+.SaleProduct{
+	display: block;
+	position: relative;
+}

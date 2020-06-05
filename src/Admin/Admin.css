@@ -1,0 +1,96 @@
+.homebutton{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#search {
+    display: block;
+    position: relative;
+    font-size: 15px;
+    padding-top: 40px;
+    margin: -20px auto 0;
+    width: 100%;
+    min-height: 20px;
+}
+#search label {
+    position: absolute;
+    left: 17px;
+    top: 51px;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.fa {
+    display: inline-block;
+	font-size: 15px;
+    text-rendering: auto;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+    display: none;
+}
+#search #search-input {
+    padding-left: 43px;
+    padding-right: 43px;
+    border-radius: 23px;
+    height: 30px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.searchproduct .menuAdmin{
+    display: grid;
+}
+.menuAdmin .search{
+    float: left;
+    width: 100%;
+}
+.menuAdmin .addproduct{
+    float: left;
+    width: 100%;
+    margin-top: 25px;
+}
+.menuAdmin .addproduct .addbtn{
+    font-size: 20px;
+    color: blue;
+}
+.menuAdmin .addproduct .addicon:after{
+    content: 'Add a product';
+    margin: 0px 0px 10px 10px;
+}
+.container .productAdmin
+{
+	display: block;
+	border: solid 1px;
+	margin-top: 50px;
+	padding: 10px 15px 15px 10px;
+	justify-content: center;
+	text-align: center;
+	position: relative;
+}
+.container #page-numbers{
+    margin-top: 5px;
+    list-style: none;
+    display: flex;
+    text-align: center;
+}
+
+.container #page-numbers > li {
+  margin-right: 0.3em;
+  color: blue;
+  user-select: none;
+  cursor: pointer;
+  border: solid 1px;
+  border-color: #000;
+  width: 30px;
+}

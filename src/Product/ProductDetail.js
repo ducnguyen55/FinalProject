@@ -97,6 +97,7 @@ class ProductDetail extends Component {
 				</div>
 				<div className="container row col-md-12 involve ">Sản phẩm liên quan</div>
 				<div className="container row col-md-12 product" onClick={() => window.location.reload(false)}>
+				AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 					<ListProduct product={sameProducts}/>
 				</div>
 				<Footer />

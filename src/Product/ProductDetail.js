@@ -28,6 +28,11 @@ class ProductDetail extends Component {
 				sameProducts.push(good);
 			}
 		})
+		while(sameProducts.length > 4 ){
+			var x = Math.floor((Math.random() * sameProducts.length));
+			console.log(x);
+			sameProducts.splice(x,1);
+		}
 	}
 	render(){
 		{this.Convert()};

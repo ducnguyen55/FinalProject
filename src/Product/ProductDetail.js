@@ -22,7 +22,6 @@ class ProductDetail extends Component {
 		}
 	Convert = () => {
 		const {products,sameProducts} = this.state;
-		this.state.sameProducts=[];
 		var pid = parseInt(this.props.match.params.id);
 		products.map((good,i)=>{
 			if(products[pid-1].type==good.type){

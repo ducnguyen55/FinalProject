@@ -29,7 +29,6 @@ class ProductDetail extends Component {
 				sameProducts.push(good);
 			}
 		})
-
 	}
 	render(){
 		{this.Convert()};

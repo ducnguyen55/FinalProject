@@ -79,8 +79,6 @@
 	display: none;
 	position: absolute !important;
 	z-index: 1;
-	width: 100%;
-	left: 0;
 	top: 0;
 	overflow: none;
 	left: 40%;
@@ -92,7 +90,6 @@
 }
 .modal-body{
 	padding: 6px !important;
-	position: absolute;
 }
 .searchicon{
 	width: 15px;
@@ -101,7 +98,6 @@
 .modal-content{
 	height: 35px;
 	margin: 0 auto;
-	position: absolute;
 }
 .searchForm{
 	top: 0;

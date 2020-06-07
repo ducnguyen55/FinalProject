@@ -65,9 +65,9 @@
 	color:blue;
 }
 
-.fa {
-	color: #000;
+.fa-search,.fa-shopping-cart {
 	margin-right: 15px;
+	color: #000;
 }
 .container .navbar-nav .nav-item i{
 	font-size: 18px;

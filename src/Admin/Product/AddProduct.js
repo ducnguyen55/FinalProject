@@ -10,12 +10,7 @@ class AddProduct extends Component {
 	constructor(){
 		super();
 		this.state={
-			products:[],
-			id: 0,
-			type: "",
-			name: "",
-			url: "",
-			price: 0
+			products:[]
 		};
 		this.changeHandler = this.changeHandler.bind(this);
         this.Submit = this.Submit.bind(this);

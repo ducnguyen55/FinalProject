@@ -51,14 +51,14 @@ class ProductDetail extends Component {
 				<div className="container ProductDetail">
 					<Link to="/" className="Top">Trang chủ</Link>
 					<Link to="#" className="Top">{products[pid-1].name}</Link>
-					<div className="container detail" style={{background: "#f8f8f8"}}>
+					<div className="container detail">
 					{
 						products.map((product,key) => {
 							if(product.id===pid) {
 								return(
-									<div className="col-sm-12 productDetail" style={{border:"none",margin:"20px"}}>
+									<div className="col-sm-12 productDetail" id="detail" style={{border:"none",margin:"20px"}}>
 										<div className="product-info">
-											<div className="col-sm-6">
+											<div className="col-sm-6 img">
 												<img alt='imageproduct' src={`${product.url}`} id="image" />
 											</div>
 											<div className="col-sm-6 buy">
@@ -74,10 +74,10 @@ class ProductDetail extends Component {
 														<option>XL</option>
 													</select>
 												</div>
-												<div class="col-md-12">
+												<div class="col-md-12 pay">
 													<button id="btn-Continue"><i class="fa fa-shopping-cart"></i> Cho vào giỏ hàng </button>
 												</div>
-												<div class="col-md-12">
+												<div class="col-md-12 pay">
 													<button id="btn-BuyNow"> <i class="fa fa-usd"> </i>Mua ngay </button>
 												</div>
 											</div>

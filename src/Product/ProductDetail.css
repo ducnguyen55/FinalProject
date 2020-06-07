@@ -15,6 +15,9 @@
     margin-right: 10px;
     padding-top:7px;
 }
+.ProductDetail .product-info{
+    z-index: -10 !important;
+}
 .ProductDetail .buy{
     margin-top: 100px;
     float:left;

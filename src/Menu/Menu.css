@@ -1,6 +1,6 @@
 #logo{
 	max-width:20%;
-	z-index: -10000;
+	z-index: -10;
 	display: none;
 	position: relative;
 }
@@ -59,9 +59,55 @@
 }
 .container .account span{
 	border: solid #fff;
+	z-index: -10;
 }
 .container .account #CustomerName{
 	color:blue;
+}
+
+.fa {
+	color: #000;
+	margin-right: 15px;
+}
+.container .navbar-nav .nav-item i{
+	font-size: 18px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+.modal-dialog{
+	display: none;
+	display: none;
+	position: absolute !important;
+	z-index: 1;
+	width: 100%;
+	left: 0;
+	top: 0;
+	overflow: none;
+	left: 40%;
+	right: 40%;
+}
+.formsearch{
+	font-size: 15px !important;
+	height: 5px !important;
+}
+.modal-body{
+	padding: 6px !important;
+	position: absolute;
+}
+.searchicon{
+	width: 15px;
+	height: 15px;
+}
+.modal-content{
+	height: 35px;
+	margin: 0 auto;
+	position: absolute;
+}
+.searchForm{
+	top: 0;
+	margin: 0 auto;
+	height: 10px;
+	font-size: 15px;
 }
 @media (max-width: 992px)
 {
@@ -83,5 +129,8 @@
 {
 	.navbar button{
 		margin-top: -20px;
+	}
+	#searchicon {
+		display: none;
 	}
 }

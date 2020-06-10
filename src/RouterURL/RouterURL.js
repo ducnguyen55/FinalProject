@@ -14,6 +14,8 @@ import Admin from '../Admin/Admin';
 import Detail from '../Admin/Product/Detail';
 import AddProduct from '../Admin/Product/AddProduct';
 import ProductDetail from '../Product/ProductDetail';
+import Menu from '../Menu/Menu';
+import Payment from '../Payment/Payment';
 class RouterURL extends Component {
 	render() {
 		return (
@@ -33,6 +35,7 @@ class RouterURL extends Component {
 						<Route exact path="/admin" component={Admin} />
 						<Route exact path="/admin/product/:id/:slug" component={Detail} />
 						<Route path="/admin/addproduct" component={AddProduct} />
+						<Route path="/gio-hang" component={Payment}/>
 						<Route component={Homepage} />
 					</Switch>
 				</div>

@@ -3,10 +3,10 @@ import './Menu.css';
 import {Link} from 'react-router-dom';
 import Account from './Account';
 class Menu extends Component {
-    constructor(props){
+    constructor(){
         super();
         this.state={
-        	searchfield:''
+        	search:''
         };
         this.changeHandler = this.changeHandler.bind(this);
         this.onSubmit = this.onSubmit.bind(this)
@@ -18,6 +18,7 @@ class Menu extends Component {
         console.log(value);
     };
 	onSubmit(event){
+		this.props.history.push('/');
 	}
    	SearchDisplay = () => {
 		var modal = document.getElementById('txtSearch');
@@ -52,6 +53,9 @@ class Menu extends Component {
 		}
    	}
 	render(){
+		var CartNumber = 0;
+		if(JSON.parse(localStorage.getItem("cart")))
+			CartNumber = JSON.parse(localStorage.getItem("cart")).length;
 		return (
 				<div className="Menu" >
 					<div className="container">
@@ -62,7 +66,7 @@ class Menu extends Component {
 						    <span className="navbar-toggler-icon"></span>
 							</button>
 							<div className="collapse navbar-collapse" id="navbarNav">
-						    	<ul className="navbar-nav col-sm-12">
+						    	<ul className="navbar-nav col-sm-11">
 									<li className="nav-item">
 										<Link to='/Dress' className="nav-link" >Đầm</Link>
 									</li>
@@ -82,12 +86,13 @@ class Menu extends Component {
 										<Link to='/Set' className="nav-link" >Set bộ</Link>
 									</li>
 						    	</ul>
-					    		<ul className="navbar-nav col-sm-3">
+					    		<ul className="navbar-nav col-sm-1">
 									<li className="nav-item">
 										<i class="fa fa-search" id="searchicon" onClick={this.SearchDisplay} style={{width:"auto"}}></i>
 									</li>
 							    	<li className="nav-item">
-										<i class="fa fa-shopping-cart"></i>
+										<Link to="/gio-hang"><i class="fa fa-shopping-cart" id="cart"></i></Link>
+										<span id="cart-number">{CartNumber}</span>
 									</li>
 						    	</ul>
 						  	</div>
@@ -98,12 +103,13 @@ class Menu extends Component {
 					    <div class="modal-content">
 					        <div class="modal-body">
 					            <div class="searchForm">
-					                <input type="text" id="txtSearch" name="searchfield" 
-					                class="form-control formsearch" 
-					                placeholder="Nhập từ khóa bạn muốn tìm kiếm, sau đó ấn Enter!" 
-					                onChange={this.changeHandler}
-					                onClick={this.onSubmit}
-					                />
+					            	<form onSubmit={this.onSubmit}>
+						                <input type="text" id="txtSearch" name="search" 
+						                class="form-control formsearch" 
+						                placeholder="Nhập từ khóa bạn muốn tìm kiếm, sau đó ấn Enter!" 
+						                onChange={this.changeHandler}
+						                />
+						            </form>
 					            </div>
 					        </div>
 					    </div>

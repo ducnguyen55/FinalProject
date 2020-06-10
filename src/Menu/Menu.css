@@ -69,6 +69,13 @@
 	margin-right: 15px;
 	color: #000;
 }
+#cart-number{
+    color: red;
+    font-size: 15px;
+    position: absolute;
+    right: 15px;
+    font-weight: 600;
+}
 .container .navbar-nav .nav-item i{
 	font-size: 18px;
     margin-right: 25px;
@@ -125,8 +132,5 @@
 {
 	.navbar button{
 		margin-top: -20px;
-	}
-	#searchicon {
-		display: none;
 	}
 }

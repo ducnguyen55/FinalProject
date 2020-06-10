@@ -13,10 +13,10 @@
     font-size: 0px;
     margin-left: 10px;
     margin-right: 10px;
-    padding-top:7px;
+    padding-top:2px;
 }
 .ProductDetail .product-info{
-    z-index: -10 !important;
+    z-index: 10 !important;
 }
 .ProductDetail .buy{
     margin-top: 100px;

@@ -13,7 +13,8 @@ class ProductDetail extends Component {
 		super();
 		this.state={
 			products:[],
-			sameProducts:[]
+			sameProducts:[],
+			productcart:[]
 		}
 	};
 	async componentDidMount() {
@@ -30,20 +31,34 @@ class ProductDetail extends Component {
 		})
 		while(sameProducts.length > 4 ){
 			var x = Math.floor((Math.random() * sameProducts.length));
-			console.log(x);
 			sameProducts.splice(x,1);
 		}
+	}
+	Cart = () => {
+		const {products} = this.state;
+		this.state.productcart = [];
+		if(localStorage.cart)
+			this.state.productcart = JSON.parse(localStorage.getItem("cart"));
+		var pid = parseInt(this.props.match.params.id);
+		products.map((product,key) => {
+			if(product.id===pid)
+				this.state.productcart.push(product);
+		});
+		localStorage.setItem("cart",JSON.stringify(this.state.productcart));
+		document.getElementById('cart-number').innerHTML = this.state.productcart.length;
+	}
+	Checkcart = () => {
+		document.getElementById('cart-number').innerHTML = JSON.parse(localStorage.getItem("cart")).length;
 	}
 	render(){
 		{this.Convert()};
 		var pid = parseInt(this.props.match.params.id);
 		const {products,sameProducts} = this.state;
-		console.log(sameProducts);
 		if(products.length==0){
 			return <h1>Loading</h1>
-		}
+		}		
 		else{
-		return (
+			return (
 			<div className="BuyProduct">
 				<header className="App-header">
 					<Menu className='Menu' />
@@ -75,7 +90,7 @@ class ProductDetail extends Component {
 													</select>
 												</div>
 												<div class="col-md-12 pay">
-													<button id="btn-Continue"><i class="fa fa-shopping-cart"></i> Cho vào giỏ hàng </button>
+													<button id="btn-Continue" onClick={this.Cart}><i class="fa fa-shopping-cart"></i> Cho vào giỏ hàng </button>
 												</div>
 												<div class="col-md-12 pay">
 													<button id="btn-BuyNow"> <i class="fa fa-usd"> </i>Mua ngay </button>
@@ -102,7 +117,7 @@ class ProductDetail extends Component {
 	    	</div>
     		)
     	}
-  	}
+  	};
 }
 
 export default ProductDetail;

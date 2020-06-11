@@ -41,3 +41,16 @@ export const login = user => {
 			console.log(err)
 		})
 }
+
+export const payment = order => {
+	console.log(order);
+	return axios
+		.post('/payment/insert',{
+			customerid: order.customerid,
+			paymentid: order.paymentid,
+			total: order.total
+		})
+		.then(res => {
+			console.log("DONE !");
+		})
+}

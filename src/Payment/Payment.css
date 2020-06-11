@@ -80,3 +80,15 @@
     font-weight: bold;
     color: #ec1f27;
 }
+.boxProducts .total span,.boxProducts .total strong{
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.buyNow .row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.buyNow .payment{
+    width: 100% !important;
+}

@@ -12,7 +12,10 @@ class Footer extends Component {
 					<p> Thời trang cho phái nữ</p>
 					<p> UIT K17 </p>
 					<p> Nguyễn Thanh Đức</p>
+					<p> Nguyễn Quốc Đại </p>
 					<p className="fa fa-envelope" id="email">17521296@gm.uit.edu.vn</p>
+					<br></br>
+					<p className="fa fa-envelope" id="email">17521294@gm.uit.edu.vn</p>
 					<div>
 						<Contact />
 					</div>

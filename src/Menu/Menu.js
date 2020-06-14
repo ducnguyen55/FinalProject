@@ -20,42 +20,42 @@ class Menu extends Component {
 	onSubmit(event){
 		this.props.history.push('/');
 	}
-   	SearchDisplay = () => {
-		var modal = document.getElementById('txtSearch');
-		var searchform = document.getElementById('searchform');
-		var Appbackground = document.getElementById('App');
-		var detail = document.getElementById('detail');			
-		window.onclick = function(event) {
-		    if (searchform.style.display =="block" && event.target != modal) {
-		    	searchform.style.display ="none";
-		    	Appbackground.style.background = "rgba(0,0,0,0)";
-		    	var image = document.getElementsByTagName('img')
-		    	for(var i = 0 ; i < image.length ; i ++ )
-		    		image[i].style.zIndex = "-1";
-    			if(detail != null)
-    				detail.style.zIndex="0";
-		    	var btn = document.getElementsByTagName('button')
-		    	for(var i = 0 ; i < btn.length ; i ++ )
-		    		btn[i].style.zIndex = "0";
-		    }
-		    else if(event.target.id=="searchicon"){
-		    	searchform.style.display ="block";
-		    	Appbackground.style.background = "rgba(0,0,0,0.7)";
-		    	var image = document.getElementsByTagName('img')
-		    	for(var i = 0 ; i < image.length ; i ++ )
-		    		image[i].style.zIndex = "-10";
-    			if(detail != null)
-    				detail.style.zIndex="-10";
-		    	var btn = document.getElementsByTagName('button')
-		    	for(var i = 0 ; i < btn.length ; i ++ )
-		    		btn[i].style.zIndex = "-10";
-		    }
-		}
-   	}
+  //  	SearchDisplay = () => {
+		// var modal = document.getElementById('txtSearch');
+		// var searchform = document.getElementById('searchform');
+		// var Appbackground = document.getElementById('App');
+		// var detail = document.getElementById('detail');			
+		// window.onclick = function(event) {
+		//     if (searchform.style.display =="block" && event.target != modal) {
+		//     	searchform.style.display ="none";
+		//     	Appbackground.style.background = "rgba(0,0,0,0)";
+		//     	var image = document.getElementsByTagName('img')
+		//     	for(var i = 0 ; i < image.length ; i ++ )
+		//     		image[i].style.zIndex = "-1";
+  //   			if(detail != null)
+  //   				detail.style.zIndex="0";
+		//     	var btn = document.getElementsByTagName('button')
+		//     	for(var i = 0 ; i < btn.length ; i ++ )
+		//     		btn[i].style.zIndex = "0";
+		//     }
+		//     else if(event.target.id=="searchicon"){
+		//     	searchform.style.display ="block";
+		//     	Appbackground.style.background = "rgba(0,0,0,0.7)";
+		//     	var image = document.getElementsByTagName('img')
+		//     	for(var i = 0 ; i < image.length ; i ++ )
+		//     		image[i].style.zIndex = "-10";
+  //   			if(detail != null)
+  //   				detail.style.zIndex="-10";
+		//     	var btn = document.getElementsByTagName('button')
+		//     	for(var i = 0 ; i < btn.length ; i ++ )
+		//     		btn[i].style.zIndex = "-10";
+		//     }
+		// }
+  //  	}
 	render(){
 		var CartNumber = 0;
-		if(JSON.parse(localStorage.getItem("cart")))
-			CartNumber = JSON.parse(localStorage.getItem("cart")).length;
+		if(JSON.parse(sessionStorage.getItem("cart")))
+			CartNumber = JSON.parse(sessionStorage.getItem("cart")).length;
 		return (
 				<div className="Menu" >
 					<div className="container">
@@ -88,10 +88,10 @@ class Menu extends Component {
 						    	</ul>
 					    		<ul className="navbar-nav col-sm-1">
 									<li className="nav-item">
-										<i class="fa fa-search" id="searchicon" onClick={this.SearchDisplay} style={{width:"auto"}}></i>
+										<i className="fa fa-search" id="searchicon" onClick={this.SearchDisplay} style={{width:"auto"}}></i>
 									</li>
 							    	<li className="nav-item">
-										<Link to="/gio-hang"><i class="fa fa-shopping-cart" id="cart"></i></Link>
+										<Link to="/gio-hang"><i className="fa fa-shopping-cart" id="cart"></i></Link>
 										<span id="cart-number">{CartNumber}</span>
 									</li>
 						    	</ul>
@@ -99,13 +99,13 @@ class Menu extends Component {
 						</nav>
 						<Account />
 					</div>
-					<div class="container modal-dialog" id="searchform">
-					    <div class="modal-content">
-					        <div class="modal-body">
-					            <div class="searchForm">
+					<div className="container modal-dialog" id="searchform">
+					    <div className="modal-content">
+					        <div className="modal-body">
+					            <div className="searchForm">
 					            	<form onSubmit={this.onSubmit}>
 						                <input type="text" id="txtSearch" name="search" 
-						                class="form-control formsearch" 
+						                className="form-control formsearch" 
 						                placeholder="Nhập từ khóa bạn muốn tìm kiếm, sau đó ấn Enter!" 
 						                onChange={this.changeHandler}
 						                />

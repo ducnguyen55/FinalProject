@@ -10,6 +10,7 @@ import Set from '../components/Set/Set';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import Profile from '../User/Profile';
+import ViewHistory from '../User/ViewHistory';
 import Admin from '../Admin/Admin';
 import Detail from '../Admin/Product/Detail';
 import AddProduct from '../Admin/Product/AddProduct';
@@ -30,7 +31,8 @@ class RouterURL extends Component {
 						<Route path="/Set" component={Set} />
 						<Route path="/dangnhap" component={Login} />
 						<Route path="/dangky" component={Register} />
-						<Route path="/profile" component={Profile} />
+						<Route exact path="/profile" component={Profile} />
+						<Route path="/profile/history" component={ViewHistory} />
 						<Route exact path="/product/:id/:slug" component={ProductDetail} />
 						<Route exact path="/admin" component={Admin} />
 						<Route exact path="/admin/product/:id/:slug" component={Detail} />

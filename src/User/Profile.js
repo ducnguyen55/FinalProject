@@ -1,13 +1,18 @@
 import React, {Component} from 'react'
 import jwt_decode from 'jwt-decode'
 import {Link} from 'react-router-dom'
+import axios from '../AxiosServer'
 import './Profile.css'
+const format_currency = (price) => {
+		return price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+	}
 class Profile extends Component {
 		constructor(){
 		super();
 		this.state ={
 			full_name: '',
-			gmail: ''
+			gmail: '',
+			payments:[]
 		};
 		this.logOut = this.logOut.bind(this);
 	}
@@ -28,6 +33,8 @@ class Profile extends Component {
 			})
 			console.log(decoded.role);
 		}
+		axios.get('/payment/get-data')
+		.then(response => this.setState({payments:response.data}));
 	};
 	CheckRole(){
 		if(this.state.role=="admin")
@@ -50,6 +57,12 @@ class Profile extends Component {
 					</li>
 					<li className="nav_item">
 						<Link to="/">Trang chủ</Link>
+					</li>
+					<li className="nav_item">
+						<Link to="/profile">Profile</Link>
+					</li>
+					<li className="nav_item">
+						<Link to="/profile/history"> Lịch sử mua hàng</Link>
 					</li>
 					{this.CheckRole()}
 				</ul>

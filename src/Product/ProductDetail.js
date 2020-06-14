@@ -37,18 +37,19 @@ class ProductDetail extends Component {
 	Cart = () => {
 		const {products} = this.state;
 		this.state.productcart = [];
-		if(localStorage.cart)
-			this.state.productcart = JSON.parse(localStorage.getItem("cart"));
+		if(sessionStorage.cart)
+			this.state.productcart = JSON.parse(sessionStorage.getItem("cart"));
 		var pid = parseInt(this.props.match.params.id);
 		products.map((product,key) => {
 			if(product.id===pid)
 				this.state.productcart.push(product);
 		});
-		localStorage.setItem("cart",JSON.stringify(this.state.productcart));
+		// localStorage.setItem("cart",JSON.stringify(this.state.productcart));
+		sessionStorage.setItem('cart',JSON.stringify(this.state.productcart));
 		document.getElementById('cart-number').innerHTML = this.state.productcart.length;
 	}
 	Checkcart = () => {
-		document.getElementById('cart-number').innerHTML = JSON.parse(localStorage.getItem("cart")).length;
+		document.getElementById('cart-number').innerHTML = JSON.parse(sessionStorage.getItem("cart")).length;
 	}
 	render(){
 		{this.Convert()};
@@ -90,10 +91,15 @@ class ProductDetail extends Component {
 													</select>
 												</div>
 												<div class="col-md-12 pay">
-													<button id="btn-Continue" onClick={this.Cart}><i class="fa fa-shopping-cart"></i> Cho vào giỏ hàng </button>
+													<Link to ="/">
+														<button id="btn-Continue" onClick={this.Cart}><i class="fa fa-shopping-cart"></i> Cho vào giỏ hàng 
+														</button>
+													</Link>
 												</div>
 												<div class="col-md-12 pay">
-													<button id="btn-BuyNow"> <i class="fa fa-usd"> </i>Mua ngay </button>
+													<Link to="/gio-hang">
+														<button id="btn-BuyNow" onClick={this.Cart}> <i class="fa fa-usd"> </i>Mua ngay </button>
+													</Link>
 												</div>
 											</div>
 										</div> 

@@ -1,19 +1,23 @@
 import React from 'react';
-import Product from './ProductPayment';
 
-const ListProduct = ({product}) => {
+const ListPayment = ({payments}) => {
 	return (
-	  	product.map((good,i)=> {
-	  		return(
-	  		 	<Product
-	  		 		key={i} 
-	  		 		name={good.name} 
-	  		 		url={good.url}
-	  		 		price={good.price}
-	  		 		/>	
-		  		);
-		  	}
-		)
+		  <div className="row">
+		  {
+		  	payments.map((payment,i)=> {
+			  		return(
+			  		 	<ProductAdmin
+			  		 		key={i} 
+			  		 		id={good.id}
+			  		 		name={good.name} 
+			  		 		url={good.url}
+			  		 		price={good.price}
+			  		 		discount={good.discount}
+			  		 		/>	
+			  		);
+		  		})
+		  }
+		  </div>
 	);
 }
 

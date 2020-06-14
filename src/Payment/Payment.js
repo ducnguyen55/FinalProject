@@ -3,7 +3,7 @@ import Menu from '../Menu/Menu';
 import Footer from '../Footer/Footer';
 import axios from '../AxiosServer';
 import {Link} from 'react-router-dom';
-import ListPayment from './ListPayment';
+import ListProduct from './ListProduct';
 import jwt_decode from 'jwt-decode';
 import {payment} from '../UserFunction/UserFunction';
 import './Payment.css';
@@ -18,15 +18,20 @@ class Payment extends Component {
 			productincart:[],
 			totalprice:0
 		};
-        this.Submit = this.Submit.bind(this)
+        this.Submit = this.Submit.bind(this);
+        this.Total = this.Total.bind(this)
 	};
 	getProductInCart = () => {
-		this.state.productincart = JSON.parse(localStorage.getItem("cart"));
+		if(sessionStorage.getItem("cart")!=undefined)
+		this.state.productincart = JSON.parse(sessionStorage.getItem("cart"));
 	}
 	Total = () => {
 		var {productincart,totalprice} = this.state;
-		for (var i = 0;i < productincart.length; i++) {
-			this.state.totalprice += productincart[i].price;
+		this.state.totalprice = 0;
+		if(productincart!=null){
+			for (var i = 0;i < productincart.length; i++) {
+				this.state.totalprice += productincart[i].price;
+			}
 		}
 	}
 	makeid = (length) => {
@@ -41,16 +46,25 @@ class Payment extends Component {
     Submit = (event) => {
         event.preventDefault();
         var id = this.makeid(10);
-        var customerid = jwt_decode(localStorage.usertoken);
-        console.log(customerid._id);
-        const Payment = {
-            customerid: customerid._id,
+        var Payment;
+        if(localStorage.usertoken!=undefined){
+	        Payment = {
+            customerid: jwt_decode(localStorage.usertoken)._id,
             paymentid: id,
             total: this.state.totalprice
+        	}
+        }
+        if(localStorage.usertoken==undefined){
+	        Payment = {
+	            customerid: "",
+	            paymentid: id,
+	            total: this.state.totalprice
+	        	}
         }
         payment(Payment).then(res => {
            	this.props.history.push('/')
     	})
+    	sessionStorage.removeItem('cart');
     }
 	render(){
 		{this.getProductInCart()};
@@ -71,7 +85,7 @@ class Payment extends Component {
 						<div className="colLeft">
 							<div className="boxCart">
 								<h3 className="titleProduct"> Thông tin giỏ hàng </h3>
-									<ListPayment product={productincart} />
+									<ListProduct product={productincart} />
 							</div>
 						</div>
 						<div className="colRight">
@@ -94,7 +108,7 @@ class Payment extends Component {
 				                </div>
 				                <div class="row">
 									<div class="col-md-12 pay">
-										<button id="btn-BuyNow" className="payment" onClick={this.Submit} > 
+										<button id="btn-BuyNow" className="payment" onClick={this.Submit}> 
 											<i class="fa fa-usd"> </i>Thanh toán
 										</button>
 									</div>

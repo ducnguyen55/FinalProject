@@ -34,6 +34,7 @@ export const login = user => {
 				}
 			else if(res.data.length > 100){
 				localStorage.setItem('usertoken',res.data);
+				sessionStorage.setItem('usertoken',res.data);
 				return res.data;
 			}
 		})

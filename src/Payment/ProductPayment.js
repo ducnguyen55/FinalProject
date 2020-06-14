@@ -1,8 +1,17 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 const format_currency = (price) => {
 	return price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
 }
-const ProductPayment = ({url,name,price}) => {	
+
+const ProductPayment = ({id,url,name,price}) => {	
+	const Delete = () => {
+		var productincart = JSON.parse(sessionStorage.getItem("cart"));
+		for ( var i = 0 ; i < productincart.length; i++)
+			if( id == productincart[i].id )
+				productincart.splice(i,1);
+		sessionStorage.setItem("cart",JSON.stringify(productincart));
+	}
 	return(
 		<div className="item clearFix">
 			<div className="col col01">
@@ -19,7 +28,7 @@ const ProductPayment = ({url,name,price}) => {
 			</div>
 			<div class="col col04">
 				<h4>Số lượng</h4>
-	            <select id="update-number" className="number" onchange="UpdateCart('101d9ca6-7731-41ca-b558-039ac0ec4be5',this); ">
+	            <select id="update-number" className="number">
 	                    <option value="1" selected="selected">1</option>
 	                    <option value="2">2</option>
 	                    <option value="3">3</option>
@@ -31,7 +40,7 @@ const ProductPayment = ({url,name,price}) => {
 	                    <option value="9">9</option>
 	                    <option value="10">10</option>
 	            </select>
-	            <a href="javascript:void(0)" class="status delCart" onclick="DeleteCart('101d9ca6-7731-41ca-b558-039ac0ec4be5');">Xóa</a>
+	            <Link to ="/gio-hang" class="status delCart" onClick={Delete}>Xóa</Link>
 	        </div>
 		</div>
 	)

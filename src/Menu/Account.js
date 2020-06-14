@@ -11,7 +11,7 @@ class Account extends Component {
 		};
 	}
 	componentDidMount(){
-		if(localStorage.length!=0){
+		if(localStorage.usertoken!=undefined){
 			const token = localStorage.usertoken;
 			const decoded =jwt_decode(token);
 			this.setState({

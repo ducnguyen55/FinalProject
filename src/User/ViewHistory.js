@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import axios from '../AxiosServer'
 import './Profile.css'
 import SearchPayment from './SearchPayment'
+import {getpayment} from '../UserFunction/UserFunction'
 const format_currency = (price) => {
 		return price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
 	}
@@ -64,9 +65,10 @@ class Profile extends Component {
     	this.setState({searchfield: event.target.value});
     }
 	componentDidMount(){
+		var token;
 		if(localStorage.length!=0)
 		{
-			const token = localStorage.usertoken;
+			token = localStorage.usertoken;
 			const decoded =jwt_decode(token);
 			this.setState({
 				full_name: decoded.full_name,

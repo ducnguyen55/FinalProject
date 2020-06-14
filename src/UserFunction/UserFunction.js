@@ -55,3 +55,29 @@ export const payment = order => {
 			console.log("DONE !");
 		})
 }
+
+export const getpayment = account => {
+	return axios
+		.get('/payment/get-data',{
+			token: account.token
+		})
+		.then(res => {
+			return res.data;
+		})
+}
+
+
+export const getPayment = token => {
+	return 	fetch('https://apiserverfinal.herokuapp.com/payment/get-data',{
+			method: 'GET',
+			headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                api_key: token
+            }
+		})
+		.then(res => {
+			return res.data;
+		}
+	)
+}

@@ -9,7 +9,12 @@ export const register = newUser => {
 			role: newUser.role
 		})
 		.then(res => {
-			console.log('Registered!')
+			if(res.data.error == "User already exists")
+			{
+				var confirm = document.getElementById('message');
+				confirm.innerHTML="Tài khoản đã được đăng ký";
+				confirm.style.color="red";
+			}
 		})
 }
 

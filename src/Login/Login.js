@@ -29,7 +29,7 @@ class Login extends Component {
 		login(User).then(res => { 
 			if(res) {
 					this.props.history.push('/profile')
-				}
+			}
 		})
 	}
 	CheckLogin(){

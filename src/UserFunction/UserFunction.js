@@ -15,6 +15,14 @@ export const register = newUser => {
 				confirm.innerHTML="Tài khoản đã được đăng ký";
 				confirm.style.color="red";
 			}
+			else if(res.data.error == "Password must be more than 6 characters")
+			{
+				var confirm = document.getElementById('message');
+				confirm.innerHTML="Password phải lớn hơn 6 ký tự";
+				confirm.style.color="red";
+			}
+			else
+				return res.data;
 		})
 }
 
@@ -25,6 +33,7 @@ export const login = user => {
 			password: user.password
 		})
 		.then(res => {
+			console.log(res);
 			if(res.data.error == "User does not exist")
 				{
 					var confirm = document.getElementById('confirm');

@@ -1,7 +1,7 @@
 import axios from '../AxiosServer'
 
 export const addProduct = newProduct => {
-	return fetch('https://apiserver7th.herokuapp.com/product/insert',{
+	return fetch('https://apiserverfinal.herokuapp.com/product/insert',{
 			method: 'POST',
 			headers: {
                 Accept: 'application/json',
@@ -23,7 +23,7 @@ export const addProduct = newProduct => {
 }
 
 export const updateProduct = Product => {
-	return 	fetch('https://apiserver7th.herokuapp.com/product/update',{
+	return 	fetch('https://apiserverfinal.herokuapp.com/product/update',{
 			method: 'PATCH',
 			headers: {
                 Accept: 'application/json',
@@ -43,7 +43,7 @@ export const updateProduct = Product => {
 }
 
 export const deleteProduct = Product => {
-	return axios(`https://apiserver7th.herokuapp.com/product/${Product.id}`,{
+	return axios(`https://apiserverfinal.herokuapp.com/product/${Product.id}`,{
 			method: 'DELETE',
 						headers: {
                 Accept: 'application/json',

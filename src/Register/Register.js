@@ -33,7 +33,8 @@ class Register extends Component {
         var password = document.getElementById('password').value;
         if(password==confirmpw)
 	        register(User).then(res => {
-	            this.props.history.push('/dangnhap')
+	            if(res)
+	            	this.props.history.push('/dangnhap')
 	        })
 	    else
 	    	{

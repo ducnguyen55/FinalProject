@@ -16,8 +16,11 @@ const ViewHistory = (payments,role) => {
 					<tr className="text-center">
 						<td>{payment.customerid}</td>
 						<td>{payment.paymentid}</td>
+						<td>{payment.fullname}</td>
+						<td>{payment.phone}</td>
 						<td>{format_currency(payment.total)}</td>
 						<td>{payment.date.split('T',10)[0]}</td>
+						<Link to={"/payment/detail/" + `${payment._id}`}><button id="btndetail"> Detail </button></Link>
 					</tr>
 					);
 				})
@@ -91,7 +94,24 @@ class Profile extends Component {
 	};
 	AdminHistory(){
 		if(this.state.role=="admin")
-			return <td>Customer ID</td>
+			return( 
+				<tr className="text-center">
+					<td>Customer ID</td>
+					<td>Payment ID</td>
+					<td>Name</td>
+					<td>Phone</td>
+					<td>Total</td>
+					<td>Day</td>
+				</tr>
+				)
+		else
+			return( 
+				<tr className="text-center">
+					<td>Payment ID</td>
+					<td>Total</td>
+					<td>Day</td>
+				</tr>
+				)
 	}
 	render() {
 		{this.CheckLogin()};
@@ -103,7 +123,6 @@ class Profile extends Component {
 				if(payment.customerid==this.state.customerid)
 					this.state.paymentsrole.push(payment);
 		})
-		console.log(this.state.paymentsrole);
 		//Search Product
 		const filteredpayments = this.state.paymentsrole.filter(payment => {
     		return payment.paymentid.toLowerCase().includes(this.state.searchfield.toLowerCase());
@@ -156,14 +175,9 @@ class Profile extends Component {
 				<div className ="container history-view" id="history-view">
 					<h4 className="text-center">LỊCH SỬ MUA HÀNG</h4>
 					<SearchPayment searchChange={this.onSearchChange}/>
-					<table className="table col-md-10 mx-auto">
+					<table className="table col-md-12 mx-auto">
 						<tbody>
-							<tr className="text-center">
-								{this.AdminHistory()}
-								<td>Payment ID</td>
-								<td>Total</td>
-								<td>Day</td>
-							</tr>
+							{this.AdminHistory()}
 		                	{renderproduct}
 						</tbody>
 					</table>

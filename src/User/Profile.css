@@ -1,6 +1,11 @@
 .nav-link {
 	margin-left : -25px;
 }
-.history-view{
-	
+@media (min-width: 1200px){
+	#history-view {
+	    max-width: 1450px;
+	}
+}
+#btndetail{
+	margin-top: 20%;
 }

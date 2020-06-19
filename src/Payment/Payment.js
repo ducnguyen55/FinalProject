@@ -108,9 +108,11 @@ class Payment extends Component {
 				                </div>
 				                <div class="row">
 									<div class="col-md-12 pay">
-										<button id="btn-BuyNow" className="payment" onClick={this.Submit}> 
-											<i class="fa fa-usd"> </i>Thanh toán
-										</button>
+										<Link to="/thanh-toan">
+											<button id="btn-BuyNow" className="payment"> 
+												<i class="fa fa-usd"> </i>Thanh toán
+											</button>
+										</Link>
 									</div>
 				                </div>
 				            </div>
@@ -118,6 +120,7 @@ class Payment extends Component {
 					</div>
 				</div>
 			</div>
+			<Footer />
     	</div>
 		)
 	}

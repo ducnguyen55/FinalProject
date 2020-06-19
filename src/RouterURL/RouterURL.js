@@ -17,6 +17,8 @@ import AddProduct from '../Admin/Product/AddProduct';
 import ProductDetail from '../Product/ProductDetail';
 import Menu from '../Menu/Menu';
 import Payment from '../Payment/Payment';
+import ThanhToan from '../Payment/ThanhToan';
+import PaymentDetail from '../Payment/PaymentDetail';
 class RouterURL extends Component {
 	render() {
 		return (
@@ -38,6 +40,8 @@ class RouterURL extends Component {
 						<Route exact path="/admin/product/:id/:slug" component={Detail} />
 						<Route path="/admin/addproduct" component={AddProduct} />
 						<Route path="/gio-hang" component={Payment}/>
+						<Route path="/thanh-toan" component={ThanhToan}/>
+						<Route exact path="/payment/detail/:id/" component={PaymentDetail} />
 						<Route component={Homepage} />
 					</Switch>
 				</div>

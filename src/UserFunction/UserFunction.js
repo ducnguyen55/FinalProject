@@ -63,6 +63,12 @@ export const payment = order => {
 		.post('/payment/insert',{
 			customerid: order.customerid,
 			paymentid: order.paymentid,
+			fullname: order.fullname,
+			gmail: order.gmail,
+			phone: order.phone,
+			address: order.address,
+			more: order.more,
+			cart: JSON.parse(sessionStorage.getItem("cart")),
 			total: order.total
 		})
 		.then(res => {

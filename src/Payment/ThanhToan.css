@@ -1,0 +1,102 @@
+.clearFix:before, .container:before, .clearFix:after, .container:after {
+    display: block;
+    content: "";
+}
+.clearFix:before, .container:before, .clearFix:after, .container:after {
+    display: block;
+    content: "";
+}
+.clearFix:after, .container:after {
+    clear: both;
+}
+.boxProducts .colThree .item.itemPay {
+    border: 1px solid #ccc;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.boxProducts .colThree .item {
+    width: 30%;
+    float: left;
+    margin-right: 2%;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.boxContact .line {
+    margin-bottom: 15px;
+    position: relative;
+}
+.inner .line .form-control {
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    line-height: 1.5%;
+    color: #000;
+    background: #f3f3f3;
+    border: 1px solid #000;
+    height: 35px;
+    font-size: 15px;
+}
+.inner .line #txtContent{
+	height: 140px;
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    color: #000;
+    background: #f3f3f3;
+    border: 1px solid #000;
+    font-size: 15px;
+    border-radius: 0.25rem;
+} 
+.boxProducts .formGroup {
+    text-align: left;
+    margin-bottom: 15px;
+    display: flex;
+}
+input[type="radio"], input[type="checkbox"] {
+    margin: 4px 0 0;
+    line-height: normal;
+}
+.boxProducts .summary {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+.infoCart {
+    padding: 5px;
+}
+.boxProducts .summary .thumbProduct {
+    float: left;
+    margin-right: 10px;
+    width: 100px;
+}
+.boxProducts .summary .thumbProduct img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+.boxProducts .summary p {
+	font-size: 16px !important;
+}
+.boxProducts .summary span {
+	font-size: 16px !important;
+}
+.boxProducts .money {
+    font-weight: 600;
+}
+.pullLeft {
+    float: left;
+}
+.pullRight {
+    float: right;
+}
+.boxProducts .process {
+    display: inline-block;
+}
+.boxProducts .total p {
+	margin-bottom: 0 !important;
+}

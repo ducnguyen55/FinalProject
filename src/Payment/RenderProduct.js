@@ -11,8 +11,8 @@ const RenderProduct = ({id,url,name,price}) => {
 		    <a href={`${url}`} class="thumbProduct">
 		        <img src={`${url}`} alt="ÁO DÂY NỮ ĐẸP AD20-001"/>
 		    </a>
-		    <p>Đơn giá: <span>{format_currency(price)}</span></p>
-		    <p class="count">số lượng: <span>1</span></p>
+		    <p>Price: <span>{format_currency(price)}</span></p>
+		    <p class="count">Number: <span>1</span></p>
 		</div>	
 		)
 }

@@ -56,13 +56,13 @@ class Profile extends Component {
 						</a>
 					</li>
 					<li className="nav_item">
-						<Link to="/">Trang chủ</Link>
+						<Link to="/">Home</Link>
 					</li>
 					<li className="nav_item">
 						<Link to="/profile">Profile</Link>
 					</li>
 					<li className="nav_item">
-						<Link to="/profile/history"> Lịch sử mua hàng</Link>
+						<Link to="/profile/history"> Purchase History</Link>
 					</li>
 					{this.CheckRole()}
 				</ul>

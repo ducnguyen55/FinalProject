@@ -21,14 +21,14 @@ class Footer extends Component {
 					</div>
 				</div>
 				<div className="col-sm menu">
-					<p className="TitleFooter">Danh mục sản phẩm</p>
+					<p className="TitleFooter">product portfolio</p>
 					<ul className="list">
-						<Link to='/Dress' className="nav-link" >Đầm</Link>
-						<Link to='/Vest' className="nav-link" >vest</Link>	
-						<Link to='/Shirt' className="nav-link" >Sơ mi</Link>
+						<Link to='/Dress' className="nav-link" >Dress</Link>
+						<Link to='/Vest' className="nav-link" >Vest</Link>	
+						<Link to='/Shirt' className="nav-link" >Shirt</Link>
 						<Link to='/Juyp' className="nav-link" >Juyp</Link>
-						<Link to='/TShirt' className="nav-link" >Áo Phông</Link>
-						<Link to='/Set' className="nav-link" >Set bộ</Link>
+						<Link to='/TShirt' className="nav-link" >TShirt</Link>
+						<Link to='/Set' className="nav-link" >Set</Link>
 					</ul>
 				</div>
 			</div>

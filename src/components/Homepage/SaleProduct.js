@@ -30,7 +30,7 @@ class SaleProduct extends Component {
 		else {
 			return (
 				<div className="container">
-					<h2 className="Title">Sản phẩm khuyến mãi</h2>
+					<h2 className="Title">Sale</h2>
 					<ListProduct product={saleproduct} admin={false}/>
 				</div>
 			);

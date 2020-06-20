@@ -7,5 +7,27 @@
 	}
 }
 #btndetail{
-	margin-top: 20%;
+	margin-top: 40%;
+}
+.history-view .radio{
+	margin-top: 15px;
+	margin-left: 15%;
+}
+.skill_progress {
+	width: 70%;
+	margin: 0 5px;
+	height: 20px;
+	background: #a2de96;
+	position: relative;
+	border-radius: 10%;
+	margin-top: 15px;
+	margin-left: 15%;
+}
+.skill_progress span{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	border-radius: 10%;
+	background: #5a3d55;
 }

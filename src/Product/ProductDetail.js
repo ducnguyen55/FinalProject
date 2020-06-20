@@ -112,7 +112,7 @@ class ProductDetail extends Component {
 					<Menu className='Menu' />
 				</header>
 				<div className="container ProductDetail">
-					<Link to="/" className="Top">Trang chủ</Link>
+					<Link to="/" className="Top">Home</Link>
 					<Link to="#" className="Top">{products[pid-1].name}</Link>
 					<div className="container detail">
 					{
@@ -127,9 +127,9 @@ class ProductDetail extends Component {
 											</div>
 											<div className="col-sm-6 buy">
 												<div className="productName">{product.name}</div>
-												<div className="productPrice"><span>giá bán</span> {format_currency(product.price)}</div>
+												<div className="productPrice"><span>Price</span> {format_currency(product.price)}</div>
 												<div className="productSize">
-													<h3><label>Chọn size :</label></h3>
+													<h3><label>Size :</label></h3>
 													<select class="size" type="size" id="size" name="size">
 														<option value hidden>Chọn size</option>
 														<option>S</option>
@@ -140,13 +140,13 @@ class ProductDetail extends Component {
 												</div>
 												<div class="col-md-12 pay">
 													<Link to ="/">
-														<button id="btn-Continue" onClick={this.Cart}><i class="fa fa-shopping-cart"></i> Cho vào giỏ hàng 
+														<button id="btn-Continue" onClick={this.Cart}><i class="fa fa-shopping-cart"></i> Add to cart 
 														</button>
 													</Link>
 												</div>
 												<div class="col-md-12 pay">
 													<Link to="/gio-hang">
-														<button id="btn-BuyNow" onClick={this.Cart}> <i class="fa fa-usd"> </i>Mua ngay </button>
+														<button id="btn-BuyNow" onClick={this.Cart}> <i class="fa fa-usd"> </i>Buy</button>
 													</Link>
 												</div>
 											</div>
@@ -159,8 +159,8 @@ class ProductDetail extends Component {
 					}
 					</div>
 					<div className="col-sm-12">
-						<button className="bt-info" onClick={this.Product}>Thông tin sản phẩm</button>
-						<button className="bt-review" onClick={this.Review} >Nhận xét sản phẩm</button>
+						<button className="bt-info" onClick={this.Product}>Product information</button>
+						<button className="bt-review" onClick={this.Review}>Product Reviews</button>
 						<div id="reviewcomment" style={{display:"none"}}>
 							<div className="boxContact">
 								<div className="form-login">
@@ -178,7 +178,7 @@ class ProductDetail extends Component {
 						</div>
 					</div>
 				</div>
-				<div className="container row col-md-12 involve ">Sản phẩm liên quan</div>
+				<div className="container row col-md-12 involve ">Related Products</div>
 				<div className="container row col-md-12 product" onClick={() => window.location.reload(false)}>
 					<ListProduct product={sameProducts}/>
 				</div>

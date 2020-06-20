@@ -21,13 +21,13 @@ const ProductPayment = ({id,url,name,price}) => {
 	            <h4>{name}</h4>
 			</div>
 			<div class="col col03">
-				<h4>Giá</h4>
+				<h4>Price</h4>
 				<p>
 	    			<strong>{format_currency(price)}</strong>
 				</p>
 			</div>
 			<div class="col col04">
-				<h4>Số lượng</h4>
+				<h4>Amount</h4>
 	            <select id="update-number" className="number">
 	                    <option value="1" selected="selected">1</option>
 	                    <option value="2">2</option>
@@ -40,7 +40,7 @@ const ProductPayment = ({id,url,name,price}) => {
 	                    <option value="9">9</option>
 	                    <option value="10">10</option>
 	            </select>
-	            <Link to ="/gio-hang" class="status delCart" onClick={Delete}>Xóa</Link>
+	            <Link to ="/gio-hang" class="status delCart" onClick={Delete}>Delete</Link>
 	        </div>
 		</div>
 	)

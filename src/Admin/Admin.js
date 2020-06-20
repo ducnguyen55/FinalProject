@@ -75,7 +75,7 @@ class Admin extends Component {
 			return (
 				<div className="container">
 					<li className="nav_item homebutton">
-						<Link to="/">Trở lại</Link>
+						<Link to="/">Back</Link>
 					</li>
 					<div className="Titile">
 						<h2>Admin Page</h2>

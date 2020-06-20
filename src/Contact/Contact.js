@@ -67,7 +67,7 @@ class Contact extends Component {
                 <h2 className="ContactTitle">Contact</h2>
                 <span id="confirm"></span>
                 <form onClick={this.handleSubmit}>
-                    <label htmlFor="fname">Tên :</label>
+                    <label htmlFor="fname">Name :</label>
                     <input type="text" id="fname" name="name" onChange={this.changeHandler} placeholder="Your name.." required/><br></br>
                     <label htmlFor="gmail">Gmail :</label>
                     <input type="text" id="gmail" name="gmail" onChange={this.changeHandler} placeholder="Gmail.." required/>

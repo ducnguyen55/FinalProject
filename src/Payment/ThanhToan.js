@@ -110,7 +110,7 @@ class Payment extends Component {
     	else
 			return	(
 				<div className="line">
-	    			<input type="text" id="txtFullName" name="fullname" onChange={this.changeHandler} required="" className="form-control" placeholder="Họ và tên"/>
+	    			<input type="text" id="txtFullName" name="fullname" onChange={this.changeHandler} required="" className="form-control" placeholder="Full name"/>
 				</div>
 			)
     }
@@ -126,15 +126,15 @@ class Payment extends Component {
 			</header>
 			<div className="container ProductDetail">
 				<div className="clearFix">
-					<Link to="/" className="Top">Trang chủ</Link>
-					<Link to="#" className="Top">Thanh Toán</Link>
+					<Link to="/" className="Top">Home</Link>
+					<Link to="#" className="Top">Pay</Link>
 				</div>
 				<div className="mainContent">
 					<div className="boxProducts">
 						<div className="colThree">
 							<div className="item itemPay" style={{height:"450px"}}>
 								<h3 class="titleProduct">
-									Thông tin khách hàng
+									Customer information
 								</h3>
 								<div className="boxContact">
 									<div className="form-login">
@@ -144,13 +144,13 @@ class Payment extends Component {
 												<input type="email" id="txtEmail" name="gmail" onChange={this.changeHandler} required="" className="form-control" placeholder="Email"/>
 											</div>
 											<div className="line">
-												<input type="phone" id="txtPhone" name="phone" onChange={this.changeHandler} required="" className="form-control" placeholder="Số điện thoại"/>
+												<input type="phone" id="txtPhone" name="phone" onChange={this.changeHandler} required="" className="form-control" placeholder="Phone"/>
 											</div>
 											<div className="line">
-											    <input type="text" id="txtAddress" name="address" onChange={this.changeHandler} required="" className="form-control" placeholder="Địa chỉ nhận hàng"/>
+											    <input type="text" id="txtAddress" name="address" onChange={this.changeHandler} required="" className="form-control" placeholder="Address"/>
 											</div>
 											<div className="line">
-												<textarea id="txtContent" name="more" onChange={this.changeHandler} placeholder="Yêu cầu"></textarea>
+												<textarea id="txtContent" name="more" onChange={this.changeHandler} placeholder="Required"></textarea>
 											</div>
 										</div>
 									</div>
@@ -158,35 +158,35 @@ class Payment extends Component {
 							</div>
 							<div className="item itemPay" style={{height:"450px"}}>
 								<h3 class="titleProduct">
-					                Phương thức nhận hàng
+									method of receiving goods
 					            </h3>
 					            <div class="formGroup">
 					                <input type="radio" id="shipping" checked="checked" name="optradio"/>
-				    	            <label for="shipping">Giao hàng tận nơi</label>
+				    	            <label for="shipping">Delivery</label>
 				        	    </div>
 				        	    <h3 class="titleProduct">
-					                Phương thức thanh toán
+					                payment methods
 					            </h3>
 					            <div class="formGroup">
 					                <input type="radio" name="optPay" id="receive" checked="checked"/>
-					                <label for="receive">Thanh toán khi nhận hàng</label>
+					                <label for="receive">Cash on delivery</label>
 					            </div>
 							</div>
 							<div className="item itemPay" style={{height:"450px"}}>
 								<div class="summary clearFix">
 					                <h3 class="titleProduct" style={{"text-align":"center"}}>
-					                    Thông tin đơn hàng
+					                    payment information
 					                </h3>
 					                <ListRenderProduct product={productincart} />
             					</div>
             					<div class="total clearFix">
-					                <p class="money pullLeft" style={{"font-size":"18px"}}>Tổng tiền</p>
+					                <p class="money pullLeft" style={{"font-size":"18px"}}>Total</p>
 					                <p class="pullRight" style={{"font-size":"18px"}}><strong>{format_currency(totalprice)}</strong>
 					                </p>
 					            </div>
 					            <div class="process">
 									<button id="btn-BuyNow" className="payment" style={{"width":"100%","margin":"0 auto"}} onClick={this.Submit}> 
-										<i class="fa fa-check" aria-hidden="true" style={{"margin-right":"5px"}}></i>Hoàn tất thanh toán
+										<i class="fa fa-check" aria-hidden="true" style={{"margin-right":"5px"}}></i> Complete Payment
 									</button>
 					            </div>
 							</div>

@@ -31,7 +31,7 @@ class NewProduct extends Component {
 		else {
 			return (
 				<div className="container">
-					<h2 className="Title">Sản phẩm mới</h2>
+					<h2 className="Title">New</h2>
 					<ListProduct product={newproduct} admin={false}/>
 				</div>
 			);

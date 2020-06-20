@@ -69,13 +69,33 @@ export const payment = order => {
 			address: order.address,
 			more: order.more,
 			cart: JSON.parse(sessionStorage.getItem("cart")),
-			total: order.total
+			total: order.total,
+			status: "notdelivery"
 		})
 		.then(res => {
 			console.log("DONE !");
 		})
 }
 
+export const updatepayment = order => {
+	console.log(order);
+	return 	fetch('https://apiserverfinal.herokuapp.com/payment/update',{
+			method: 'PATCH',
+			headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                api_key: localStorage.usertoken
+            },
+            body:JSON.stringify({
+            	paymentid: order.paymentid,
+				status: order.status
+            })
+		})
+		.then(res => {
+			console.log('Update success!')
+		}
+	)
+}
 // export const getpayment = account => {
 // 	return axios
 // 		.get('/payment/get-data',{

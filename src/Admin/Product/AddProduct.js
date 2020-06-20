@@ -62,9 +62,9 @@ class AddProduct extends Component {
 		return(
 			<div className="container detail">
 				<li className="nav_item homebutton">
-					<Link to="/admin">Trở lại</Link>
+					<Link to="/admin">Back</Link>
 				</li>
-				<h1 className="detailTitle"> SẢN PHẨM </h1>
+				<h1 className="detailTitle"> PRODUCT </h1>
 				<div className="col-sm-12 productDetail">
 					<div className="product-info">
 						<div className="col-sm-6 image">
@@ -86,15 +86,15 @@ class AddProduct extends Component {
 								</div>
 								<div>
 									<label for="">Name :</label>
-									<input type="text" id="name" name="name" onChange={this.changeHandler} placeholder="Nhập tên sản phẩm" />
+									<input type="text" id="name" name="name" onChange={this.changeHandler} placeholder="Product's name" />
 								</div>
 								<div>
 									<label for="">URL (URL Directly) :</label>
-									<input type="text" id="url"  name="url" onChange={this.changeHandler} placeholder="Nhập đường dẫn" />
+									<input type="text" id="url"  name="url" onChange={this.changeHandler} placeholder="Url" />
 								</div>
 								<div>
 									<label for="">Price :</label>
-									<input type="text" id="price" name="price" onChange={this.changeHandler} placeholder="Nhập giá" />
+									<input type="text" id="price" name="price" onChange={this.changeHandler} placeholder="Price" />
 								</div>
 								<button type="submit" className="addbtn btn btn-primary btn-block">Add Product</button>
 							</form>

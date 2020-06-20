@@ -108,3 +108,37 @@ button:active {
     justify-content: center;
     width: 80%
 }
+
+.inner .line #txtComment {
+    height: 50%;
+    display: block;
+    width: 80%;
+    padding: 5px 10px;
+    color: #000;
+    background: #f3f3f3;
+    border: 1px solid #000;
+    font-size: 15px;
+    border-radius: 0.25rem;
+    float: left;
+}
+#reviewcomment #submitComment {
+    margin-left: 50px;
+}
+@media (max-width: 1000px){
+    #reviewcomment .boxContact .inner .line .binhluan {
+        width: 100%;
+        height: 50%;
+    }
+}
+#reviewcomment .Comments #txtComment{
+    margin-bottom: 10px;
+}
+
+.Comments .statusComment{
+    margin-left: 50px;
+}
+
+.Comments .deleteComment{
+    margin-left: 50px;
+    color: red;
+}

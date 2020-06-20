@@ -10,7 +10,7 @@ class Footer extends Component {
 				<div className="col-sm info">
 					<p className="TitleFooter">Thông tin liên hệ</p>
 					<p> Thời trang cho phái nữ</p>
-					<p> UIT K17 </p>
+					<p> UIT K12 </p>
 					<p> Nguyễn Thanh Đức</p>
 					<p> Nguyễn Quốc Đại </p>
 					<p className="fa fa-envelope" id="email">17521296@gm.uit.edu.vn</p>

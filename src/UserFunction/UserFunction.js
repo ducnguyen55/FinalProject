@@ -76,28 +76,39 @@ export const payment = order => {
 		})
 }
 
-export const getpayment = account => {
+// export const getpayment = account => {
+// 	return axios
+// 		.get('/payment/get-data',{
+// 			token: account.token
+// 		})
+// 		.then(res => {
+// 			return res.data;
+// 		})
+// }
+
+// export const getPayment = token => {
+// 	return 	fetch('https://apiserverfinal.herokuapp.com/payment/get-data',{
+// 			method: 'GET',
+// 			headers: {
+//                 Accept: 'application/json',
+//                 'Content-Type': 'application/json',
+//                 api_key: token
+//             }
+// 		})
+// 		.then(res => {
+// 			return res.data;
+// 		}
+// 	)
+// }
+
+export const createComment = comment => {
 	return axios
-		.get('/payment/get-data',{
-			token: account.token
+		.post('/comment/insert',{
+			customerid: comment.customerid,
+			productid: comment.productid,
+			newcomment: comment.comment
 		})
 		.then(res => {
-			return res.data;
+			console.log("Thanks you");
 		})
-}
-
-
-export const getPayment = token => {
-	return 	fetch('https://apiserverfinal.herokuapp.com/payment/get-data',{
-			method: 'GET',
-			headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-                api_key: token
-            }
-		})
-		.then(res => {
-			return res.data;
-		}
-	)
 }

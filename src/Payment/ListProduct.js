@@ -1,11 +1,11 @@
 import React from 'react';
-import Product from './ProductPayment';
+import ProductPayment from './ProductPayment';
 
 const ListProduct = ({product}) => {
 	return (
 	  	product.map((good,i)=> {
 	  		return(
-	  		 	<Product
+	  		 	<ProductPayment
 	  		 		key={i} 
 	  		 		id={good.id}
 	  		 		name={good.name} 

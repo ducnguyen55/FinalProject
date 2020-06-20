@@ -56,3 +56,19 @@ export const deleteProduct = Product => {
 		}
 	)
 }
+
+export const deleteComment = Comment => {
+	console.log(Comment.id);
+	return axios(`https://apiserverfinal.herokuapp.com/comment/${Comment.id}`,{
+			method: 'DELETE',
+					headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                api_key: localStorage.usertoken
+            }
+		})
+		.then(res => {
+			console.log('Deleted comment!')
+		}
+	)
+}

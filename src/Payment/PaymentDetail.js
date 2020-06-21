@@ -47,7 +47,7 @@ class PaymentDetail extends Component {
 
 		<div className="BuyProduct">
 			<header className="App-header">
-				<li style={{"display":"flex"}}><Link to="/">Back</Link></li>
+				<li style={{"display":"flex"}}><Link to="/profile/history">Back</Link></li>
 				<h2 className="text-center">THÔNG TIN CHI TIẾT</h2>
 			</header>
 			<div className="container ProductDetail">

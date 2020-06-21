@@ -61,7 +61,7 @@ export const login = user => {
 
 export const updateUserrank = user => {
 	console.log(user.userid);
-	return 	fetch('http://localhost:5000/user/update',{
+	return 	fetch('https://apiserverfinal.herokuapp.com/user/update',{
 			method: 'PATCH',
 			headers: {
                 Accept: 'application/json',

@@ -44,8 +44,10 @@ class PaymentDetail extends Component {
 	render(){
 		{this.getcart()}
 		return (
+
 		<div className="BuyProduct">
 			<header className="App-header">
+				<li style={{"display":"flex"}}><Link to="/">Back</Link></li>
 				<h2 className="text-center">THÔNG TIN CHI TIẾT</h2>
 			</header>
 			<div className="container ProductDetail">

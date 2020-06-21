@@ -126,6 +126,7 @@ class Profile extends Component {
 						<td>{format_currency(payment.total)}</td>
 						<td>{payment.date.split('T',10)[0]}</td>
 						{this.StatusPayment(payment)}
+						<Link to={"/payment/detail/" + `${payment._id}`}><button id="btndetail"> Detail </button></Link>
 					</tr>
 					);
 				}

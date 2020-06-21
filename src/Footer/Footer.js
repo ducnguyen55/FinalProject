@@ -6,7 +6,7 @@ import Contact from '../Contact/Contact';
 class Footer extends Component {
 	render(){
 		return (
-			<div className="container footer row mx-auto d-block">
+			<div className="container footer row mx-auto d-block" style={{"margin-top":"50px"}}>
 				<div className="col-sm info">
 					<p className="TitleFooter">Thông tin liên hệ</p>
 					<p> Thời trang cho phái nữ</p>

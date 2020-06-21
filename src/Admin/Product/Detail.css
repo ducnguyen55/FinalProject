@@ -17,9 +17,6 @@
 	background-color: rgb(0, 255, 191);
 	text-transform: capitalize;
 }
-.productDetail{
-    width: 50%;
-}
 .detail #image {
 	float: left;
 	width: 80%;

@@ -56,7 +56,7 @@ class Profile extends Component {
 		else if(this.state.rank=="gold")
 			return <td style={{"text-transform":"uppercase","color":"#FFD700"}}>{this.state.rank}</td>
 		else
-			return <td style={{"text-transform":"uppercase","color":"#b9f2ff","background-image":"linear-gradient(to right, red, #f06d06, rgb(255, 255, 0), green)"}}>{this.state.rank} <span style={{color:"#000"}}>(MAX RANK)</span></td>
+			return <td style={{"text-transform":"uppercase","color":"#b9f2ff","background-image":"linear-gradient(to right, red, #f06d06, rgb(255, 255, 0), green)"}}>{this.state.rank} <span style={{color:"#000"}}>(MAX)</span></td>
 	}
 	Progress = () => {
         if(this.state.rank=="bronze"){

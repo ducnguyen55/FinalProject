@@ -126,7 +126,7 @@ class Detail extends Component {
 						}
 					)
 				}
-				<button type="submit" className="delete btn btn-primary btn-block" onClick={this.Delete}>Delete</button>
+				<button type="submit" className="delete btn-primary btn-block" onClick={this.Delete} style={{"border-radius":"5px"}}>Delete</button>
 			</div>
 		)
 	}

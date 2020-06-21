@@ -2,51 +2,30 @@ import React, {Component} from 'react'
 import jwt_decode from 'jwt-decode'
 import {Link} from 'react-router-dom'
 import axios from '../AxiosServer'
+import Account from '../Menu/Account'
+import {getCustomer} from '../UserFunction/UserFunction'
 import './Profile.css'
-const format_currency = (price) => {
-		return price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
-	}
 class Profile extends Component {
 		constructor(){
 		super();
 		this.state ={
-			full_name: '',
-			gmail: '',
 			payments:[],
-			progress:0
+			progress:0,
+			full_name:'',
+			rank:''
 		};
-		this.logOut = this.logOut.bind(this);
-	}
-	logOut(e){
-			e.preventDefault();
-			localStorage.removeItem('usertoken');
-			this.props.history.push('/');
-	}
+	}	
 	componentDidMount(){
-		if(localStorage.length!=0)
-		{
-			const token = localStorage.usertoken;
-			const decoded =jwt_decode(token);
-			this.setState({
-				full_name: decoded.full_name,
-				gmail: decoded.gmail,
-				role: decoded.role,
-				rank: decoded.rank,
-				total: decoded.total
-			})
-			console.log(decoded);
-		}
-		axios.get('/payment/get-data')
-		.then(response => this.setState({payments:response.data}));
-	};
-	CheckRole(){
-		if(this.state.role=="admin")
-			return <li className="nav_item"><Link to="/admin">Admin Page</Link></li>
-	}
-	CheckLogin = () => {
-		if(localStorage.length==0){
-			this.props.history.push("/");
-		}
+		const customerid = this.props.match.params.id;
+		getCustomer(customerid).then(res => { 
+			if(res) {
+				console.log(res.full_name);
+				this.setState({
+					full_name: res.full_name,
+					rank: res.rank
+				})
+			}
+		})
 	};
 	CheckRank = () => {
 		if(this.state.rank=="bronze")
@@ -55,7 +34,7 @@ class Profile extends Component {
 			return <td style={{"text-transform":"uppercase","color":"#c0c0c0"}}>{this.state.rank}</td>
 		else if(this.state.rank=="gold")
 			return <td style={{"text-transform":"uppercase","color":"#FFD700"}}>{this.state.rank}</td>
-		else
+		else if(this.state.rank=="diamond")
 			return <td style={{"text-transform":"uppercase","color":"#b9f2ff","background-image":"linear-gradient(to right, red, #f06d06, rgb(255, 255, 0), green)"}}>{this.state.rank} <span style={{color:"#000"}}>(MAX RANK)</span></td>
 	}
 	Progress = () => {
@@ -70,26 +49,15 @@ class Profile extends Component {
         }
 	}
 	render() {
-		{this.CheckLogin()};
 		{this.Progress()};
+		console.log(this.props.match.params.id);
 		return (
 			<div>
 				<ul>
-					<li className="nav-item">
-						<a href="" onClick={this.logOut} className="nav-link">
-						Logout
-						</a>
-					</li>
+					<Account className="ProfileOwner" />
 					<li className="nav_item">
 						<Link to="/">Home</Link>
 					</li>
-					<li className="nav_item">
-						<Link to="/profile">Profile</Link>
-					</li>
-					<li className="nav_item">
-						<Link to="/profile/history"> Purchase History</Link>
-					</li>
-					{this.CheckRole()}
 				</ul>
 				<div className ="container">
 					<div className ="jumbotron mt-5">
@@ -101,10 +69,6 @@ class Profile extends Component {
 								<tr>
 									<td>Full Name</td>
 									<td>{this.state.full_name}</td>
-								</tr>
-								<tr>
-									<td>Gmail</td>
-									<td>{this.state.gmail}</td>
 								</tr>
 								<tr>
 									<td>Rank</td>

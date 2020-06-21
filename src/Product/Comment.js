@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import {deleteComment} from '../Admin/AdminFunction'
 
-const Comment = ({id,customerid,productid,comment}) => {	
+const Comment = ({id,customerid,full_name,productid,comment}) => {	
 
 	const Delete = () => {
 	    const Comment = {
@@ -21,11 +21,22 @@ const Comment = ({id,customerid,productid,comment}) => {
 			const decoded =jwt_decode(token);
 			if(decoded.role=="admin")
 				return(
-					<button type="submit" className="deleteComment" onClick={Delete} style={{"float":"left","margin-top":"10px"}}>
-						Delete
-					</button>
-				)	
+					<div>
+						<textarea id="txtComment" value={comment} style={{"float":"left","width":"900px"}}></textarea>
+						<button type="submit" className="deleteComment" onClick={Delete} style={{"float":"left","margin-top":"10px"}}>
+							Delete
+						</button>
+					</div>
+				)
+			else
+				return(
+						<textarea id="txtComment" value={comment} style={{"float":"left","width":"900px","margin-right":"1000px"}}></textarea>
+					)
 		}
+		else
+				return(
+						<textarea id="txtComment" value={comment} style={{"float":"left","width":"900px","margin-right":"1000px"}}></textarea>
+					)
 	}
 
 	return(
@@ -33,7 +44,7 @@ const Comment = ({id,customerid,productid,comment}) => {
 			<div className="form-login">
 				<div className="inner">
 					<div className="line">
-						<textarea id="txtComment" value={comment} style={{"float":"left"}}></textarea>
+						<Link to={"/" + `${customerid}`}><h8>{full_name}</h8></Link>
 						{CheckRole()}
 					</div>
 				</div>

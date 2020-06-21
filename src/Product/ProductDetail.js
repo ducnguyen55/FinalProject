@@ -20,6 +20,7 @@ class ProductDetail extends Component {
 			sameProducts:[],
 			productcart:[],
 			customerid:'',
+			full_name:'',
 			productid:'',
 			comments:[]
 		};
@@ -32,6 +33,7 @@ class ProductDetail extends Component {
 			const token = localStorage.usertoken;
 			const decoded =jwt_decode(token);
 			this.state.customerid = decoded._id;
+			this.state.full_name=decoded.full_name;
 		}
 		await axios.get('/product/get-data')
 		.then(response => this.setState({products:response.data}));
@@ -79,6 +81,7 @@ class ProductDetail extends Component {
 	        var comment = document.getElementById('txtComment').value;
 			const Comment = {
 				customerid: this.state.customerid,
+				full_name: this.state.full_name,
 				productid: this.state.productid,
 				comment: comment
 			}

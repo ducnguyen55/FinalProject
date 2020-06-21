@@ -5,7 +5,7 @@ import axios from '../AxiosServer'
 import './Profile.css'
 import SearchPayment from './SearchPayment'
 import {getpayment} from '../UserFunction/UserFunction'
-import {updatepayment} from '../UserFunction/UserFunction'
+import {updatepayment,updateUserrank} from '../UserFunction/UserFunction'
 const format_currency = (price) => {
 		return price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
 }
@@ -60,7 +60,8 @@ class Profile extends Component {
 				full_name: decoded.full_name,
 				gmail: decoded.gmail,
 				role: decoded.role,
-				customerid: decoded._id
+				customerid: decoded._id,
+				rank: decoded.rank,
 			})
 		}
 		axios.get('/payment/get-data')
@@ -134,21 +135,31 @@ class Profile extends Component {
 	StatusPayment = (payment) => {
 		function Update() {
 			console.log(payment.status);
-			var status;
 			if(payment.status=="notdelivery")
-				status="delivery";
+				payment.status="delivery";
 			else
-				status="done";
+				payment.status="done";
 			const Payment = {
 		        paymentid: payment.paymentid,
-		        status: status
+		        status: payment.status
 		    }
 		    console.log(Payment);
 		    updatepayment(Payment).then(res => {
-		    	alert("Update success");
+				alert("Update success");
 		    	window.location.reload(true);
-			})
+			});
+			if(payment.status=="done")
+			updateUserrank(User).then(res => {
+		    	window.location.reload(true);
+		})
 		}
+		console.log(this.state.total);
+	    const User = {
+	    	userid: payment.customerid,
+	    	total: parseInt(payment.total),
+	    }
+	    console.log(User);
+
 		if(this.state.role=="admin"){
 			if(payment.status=="notdelivery")
 				return <td style={{color:"red","cursor": "pointer"}} onClick={Update}>Not Delivery</td>

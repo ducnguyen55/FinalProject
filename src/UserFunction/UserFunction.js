@@ -6,7 +6,9 @@ export const register = newUser => {
 			full_name: newUser.full_name,
 			gmail: newUser.gmail,
 			password: newUser.password,
-			role: newUser.role
+			role: newUser.role,
+			rank: "bronze",
+			total: 0
 		})
 		.then(res => {
 			if(res.data.error == "User already exists")
@@ -57,6 +59,40 @@ export const login = user => {
 		})
 }
 
+export const updateUserrank = user => {
+	console.log(user.userid);
+	return 	fetch('http://localhost:5000/user/update',{
+			method: 'PATCH',
+			headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                api_key: localStorage.usertoken
+            },
+            body:JSON.stringify({
+            	userid: user.userid,
+				total: user.total
+            })
+		})
+		.then(res => {
+			return res.data;
+		}
+	)
+}
+
+export const getCustomer = customerid => {
+	console.log(customerid)
+	return axios
+		.post('/user',{
+			customerid: customerid
+		})
+		.then(res => {
+			return res.data;
+		})
+		.catch(err => {
+			console.log(err)
+		})
+}
+
 export const payment = order => {
 	console.log(order);
 	return axios
@@ -96,35 +132,27 @@ export const updatepayment = order => {
 		}
 	)
 }
-// export const getpayment = account => {
-// 	return axios
-// 		.get('/payment/get-data',{
-// 			token: account.token
-// 		})
-// 		.then(res => {
-// 			return res.data;
-// 		})
-// }
 
-// export const getPayment = token => {
-// 	return 	fetch('https://apiserverfinal.herokuapp.com/payment/get-data',{
-// 			method: 'GET',
-// 			headers: {
-//                 Accept: 'application/json',
-//                 'Content-Type': 'application/json',
-//                 api_key: token
-//             }
-// 		})
-// 		.then(res => {
-// 			return res.data;
-// 		}
-// 	)
-// }
+export const getPayment = paymentid => {
+	console.log(paymentid)
+	return axios
+		.post('/payment',{
+			paymentid: paymentid
+		})
+		.then(res => {
+			return res.data;
+		})
+		.catch(err => {
+			console.log(err)
+		})
+}
 
 export const createComment = comment => {
+	console.log(comment);
 	return axios
 		.post('/comment/insert',{
 			customerid: comment.customerid,
+			full_name: comment.full_name,
 			productid: comment.productid,
 			newcomment: comment.comment
 		})

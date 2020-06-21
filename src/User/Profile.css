@@ -31,3 +31,9 @@
 	border-radius: 10%;
 	background: #5a3d55;
 }
+.account{
+	display: flex;
+	position: absolute;
+	right: 0;
+	top: 0;
+}

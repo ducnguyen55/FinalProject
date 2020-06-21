@@ -16,7 +16,9 @@ class Payment extends Component {
 		super();
 		this.state={
 			productincart:[],
-			totalprice:0
+			totalprice:0,
+			total:0,
+			rank:'none'
 		};
         this.Submit = this.Submit.bind(this);
         this.Total = this.Total.bind(this)
@@ -66,10 +68,41 @@ class Payment extends Component {
     	})
     	sessionStorage.removeItem('cart');
     }
+    Discount = () => {
+    	var customer;
+    	if(localStorage.usertoken!=undefined){
+    		customer =jwt_decode(localStorage.usertoken);
+    		this.state.rank=customer.rank;
+    	}
+    	const {rank} = this.state;
+    	if(rank=="bronze")
+    		this.state.total=this.state.totalprice*0.99;
+    	else if(rank=="silver")
+    		this.state.total=this.state.totalprice*0.95;
+    	else if(rank=="gold")
+    		this.state.total=this.state.totalprice*0.90;
+    	else if(rank=="diamond")
+    		this.state.total=this.state.totalprice*0.85;
+    	else
+    		this.state.total=this.state.totalprice*1;
+    }
+	CheckRank = () => {
+		if(this.state.rank=="bronze")
+			return <span style={{"text-transform":"uppercase","color":"#cd7f32"}}>{this.state.rank}</span>
+		else if(this.state.rank=="silver")
+			return <span style={{"text-transform":"uppercase","color":"#c0c0c0"}}>{this.state.rank}</span>
+		else if(this.state.rank=="gold")
+			return <span style={{"text-transform":"uppercase","color":"#FFD700"}}>{this.state.rank}</span>
+		else if(this.state.rank=="diamond")
+			return <span style={{"text-transform":"uppercase","color":"#70D1F4"}}>{this.state.rank}</span>
+		else 
+			return <span style={{"text-transform":"uppercase","color":"#000000"}}>{this.state.rank}</span>
+	}
 	render(){
 		{this.getProductInCart()};
 		{this.Total()};
-		var {productincart,totalprice} = this.state;
+		{this.Discount()};
+		var {productincart,totalprice,total} = this.state;
 		return (
 		<div className="BuyProduct">
 			<header className="App-header">
@@ -90,12 +123,14 @@ class Payment extends Component {
 						</div>
 						<div className="colRight">
 							<h3 className="titleProduct"> Order </h3>
-							<p class="price">
-                				<span>Total: </span> {format_currency(totalprice)}
-            				</p>
-            				<p class="total">
-                				<span>Total pay: </span> <strong>{format_currency(totalprice)}</strong>
-            				</p>
+            				<span style={{color:"red"}}>Total: </span> {format_currency(totalprice)}
+                			<p style={{"font-size":"18px"}}>
+								Rank : {this.CheckRank()}
+								<br/>
+								<span style={{"font-size":"15px"}}>Discount: </span> <strong>{100 - total/totalprice*100}%</strong>
+								<br/>
+                				<span>Total pay: </span> <strong>{format_currency(total)}</strong>
+							</p>
             				<div class="buyNow">
 				                <div class="row">
 				                    <div class="col-md-12 pay">

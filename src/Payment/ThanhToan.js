@@ -23,7 +23,8 @@ class Payment extends Component {
 			gmail:"",
 			phone:"",
 			address:"",
-			more:""
+			more:"",
+			rank:'none'
 		};
         this.Submit = this.Submit.bind(this);
         this.Total = this.Total.bind(this);
@@ -64,9 +65,6 @@ class Payment extends Component {
         var phone = document.getElementById('txtPhone').value;
         var address = document.getElementById('txtAddress').value;
         var more = document.getElementById('txtContent').value;
-        console.log(fullname);
-        console.log(gmail);
-        console.log(address);
         if(localStorage.usertoken!=undefined){
 	        Payment = {
             customerid: jwt_decode(localStorage.usertoken)._id,
@@ -114,11 +112,29 @@ class Payment extends Component {
 				</div>
 			)
     }
+    Discount = () => {
+    	var customer;
+    	if(localStorage.usertoken!=undefined){
+    		customer =jwt_decode(localStorage.usertoken);
+    		this.state.rank=customer.rank;
+    	}
+    	const {rank} = this.state;
+    	if(rank=="bronze")
+    		this.state.totalprice=this.state.totalprice*0.99;
+    	else if(rank=="silver")
+    		this.state.totalprice=this.state.totalprice*0.95;
+    	else if(rank=="gold")
+    		this.state.totalprice=this.state.totalprice*0.90;
+    	else if(rank=="diamond")
+    		this.state.totalprice=this.state.totalprice*0.85;
+    	else
+    		this.state.totalprice=this.state.totalprice*1;
+    }
 	render(){
 		{this.getProductInCart()};
 		{this.Total()};
+		{this.Discount()};
 		var {productincart,totalprice} = this.state;
-		console.log(this.state.fullname);
 		return (
 		<div className="BuyProduct">
 			<header className="App-header">

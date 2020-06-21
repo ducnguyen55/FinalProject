@@ -11,7 +11,8 @@ const ListComment = ({comments,productid}) => {
 							<Comment
 							key={i} 
 							id={comment._id}
-							customerid={comment.customerid} 
+							customerid={comment.customerid}
+							full_name={comment.full_name}
 							productid={comment.productid}
 							comment={comment.comment}
 							/>	

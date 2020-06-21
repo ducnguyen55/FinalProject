@@ -66,9 +66,9 @@ class DressProduct extends Component {
 				<div className="container">
 					<h2 className="Title">{this.props.type}</h2>
 		              {renderproduct}
-		            <ul id="page-numbers">
-		              {renderPageNumbers}
-		            </ul>
+	    	        <div id="page-numbers" className="text-center page-numbers1">
+            	  		{renderPageNumbers}
+            		</div>
 				</div>
 			);
 		}

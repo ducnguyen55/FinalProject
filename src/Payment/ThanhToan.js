@@ -65,35 +65,39 @@ class Payment extends Component {
         var phone = document.getElementById('txtPhone').value;
         var address = document.getElementById('txtAddress').value;
         var more = document.getElementById('txtContent').value;
-        if(localStorage.usertoken!=undefined){
-	        Payment = {
-            customerid: jwt_decode(localStorage.usertoken)._id,
-            paymentid: id,
-            fullname: fullname,
-            gmail: gmail,
-            phone: phone,
-            address: address,
-            more: more,
-            cart: JSON.parse(sessionStorage.getItem("cart")),
-            total: this.state.totalprice
-        	}
-        }
-        if(localStorage.usertoken==undefined){
-	        Payment = {
-	            customerid: "",
+        if(fullname==''||gmail==''||phone==''||address=='')
+        	alert("Please input all field");
+        else {
+	        if(localStorage.usertoken!=undefined){
+		        Payment = {
+	            customerid: jwt_decode(localStorage.usertoken)._id,
 	            paymentid: id,
-                fullname: fullname,
+	            fullname: fullname,
 	            gmail: gmail,
 	            phone: phone,
 	            address: address,
 	            more: more,
+	            cart: JSON.parse(sessionStorage.getItem("cart")),
 	            total: this.state.totalprice
 	        	}
-        }
-        payment(Payment).then(res => {
-           	this.props.history.push('/')
-    	})
-    	sessionStorage.removeItem('cart');
+	        }
+	        if(localStorage.usertoken==undefined){
+		        Payment = {
+		            customerid: "",
+		            paymentid: id,
+	                fullname: fullname,
+		            gmail: gmail,
+		            phone: phone,
+		            address: address,
+		            more: more,
+		            total: this.state.totalprice
+		        	}
+	        }
+	        payment(Payment).then(res => {
+	           	this.props.history.push('/')
+	    	})
+	    	sessionStorage.removeItem('cart');
+	    }
     }
     CheckLogin = () => {
     	if(localStorage.usertoken!=undefined)

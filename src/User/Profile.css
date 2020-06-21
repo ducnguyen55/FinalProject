@@ -1,13 +1,14 @@
-.nav-link {
-	margin-left : -25px;
-}
+
 @media (min-width: 1200px){
 	#history-view {
 	    max-width: 1450px;
 	}
 }
 #btndetail{
-	margin-top: 40%;
+	margin-top:10px;
+}
+.text-center tr{
+	margin-left: 100px;
 }
 .history-view .radio{
 	margin-top: 15px;
@@ -23,6 +24,12 @@
 	margin-top: 15px;
 	margin-left: 15%;
 }
+.jumbotron{
+	margin-left: 200px;
+}
+.jumbotron div h1{
+	font-size: 300%;
+}
 .skill_progress span{
 	position: absolute;
 	top: 0;
@@ -37,3 +44,82 @@
 	right: 0;
 	top: 0;
 }
+.searchicon{
+	position: absolute;
+	padding-top: 9px;
+	margin-left: 27%;
+}
+.input-lg{
+	padding-left: 100px;
+	margin-left: 100px;
+	margin-right: 1000px;
+  }
+.search input{
+	font-size: 50%;
+}
+.search {
+	margin-right: 900px;
+}
+body {
+	font-family: "Lato", sans-serif;
+  }
+  .text-center{
+	color: black;
+  }
+  .sidenav {
+	height: 100%;
+	width: 245px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: gainsboro;
+	overflow-x: hidden;
+	padding-top: 20px;
+  }
+  #history-view .page-numbers1{
+   margin-left: 10px;
+   margin-bottom: 100px;
+  }
+  .sidenav a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 25px;
+	color: black;
+	display: block;
+  }
+  
+  .sidenav a:hover {
+	color: blue;
+  }
+  .nav-item{
+	float: left;
+	list-style-type: none;
+  }
+  .nav{
+	width: 50%;
+	margin-top: 50px;
+	margin-bottom: 50px;
+  }
+  .history-view{
+	margin-left: 150px;
+	padding-right: 10px;
+  }
+  td{
+	  font-size: 18px;
+  }
+  table{
+	margin-top: 20px;
+	margin-left: 100px;
+  }
+  .history-view h4{
+	text-align: center;
+  }
+  .text-center{
+	  font-size: 50%;
+  }
+  @media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+  }
+  

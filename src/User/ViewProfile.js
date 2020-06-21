@@ -55,9 +55,7 @@ class Profile extends Component {
 			<div>
 				<ul>
 					<Account className="ProfileOwner" />
-					<li className="nav_item">
-						<Link to="/">Home</Link>
-					</li>
+					<Link to="/">Home</Link>
 				</ul>
 				<div className ="container">
 					<div className ="jumbotron mt-5">

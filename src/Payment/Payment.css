@@ -1,5 +1,5 @@
 .mainContent {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 .boxProducts .colLeft {
     float: left;
@@ -17,6 +17,9 @@
     position: relative;
     height: 250px;
     z-index: 1;
+}
+.text-center{
+    font-size: 100%;
 }
 .boxProducts .colLeft .col.col01 {
     width: 20%;

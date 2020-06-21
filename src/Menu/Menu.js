@@ -68,22 +68,22 @@ class Menu extends Component {
 							<div className="collapse navbar-collapse" id="navbarNav">
 						    	<ul className="navbar-nav col-sm-11">
 									<li className="nav-item">
-										<Link to='/Dress' className="nav-link" >Đầm</Link>
+										<Link to='/Dress' className="nav-link" >Dress</Link>
 									</li>
 							    	<li className="nav-item ">
-										<Link to='/Vest' className="nav-link" >vest</Link>
+										<Link to='/Vest' className="nav-link" >Vest</Link>
 									</li>
 									<li className="nav-item">
-										<Link to='/Shirt' className="nav-link" >Sơ mi</Link>
+										<Link to='/Shirt' className="nav-link" >Shirt</Link>
 									</li>
 									<li className="nav-item">
 										<Link to='/Juyp' className="nav-link" >Juyp</Link>
 									</li>
 									<li className="nav-item">
-										<Link to='/TShirt' className="nav-link" >Áo Phông</Link>
+										<Link to='/TShirt' className="nav-link" >TShirt</Link>
 									</li>
 									<li className="nav-item">
-										<Link to='/Set' className="nav-link" >Set bộ</Link>
+										<Link to='/Set' className="nav-link" >Set</Link>
 									</li>
 						    	</ul>
 					    		<ul className="navbar-nav col-sm-1">

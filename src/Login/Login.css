@@ -8,7 +8,7 @@
 }
 
 .Login-Form .container .Title-login i::after{
-	content: 'Đăng nhập';
+	content: 'Login';
 	margin-left: 10px;
 	font-size: 35px;
 }

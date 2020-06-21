@@ -75,12 +75,12 @@ class Register extends Component {
 										<label for="password">Confirm Password :</label>
 										<input type="password" id="confirm" name="password" onChange={this.changeHandler} placeholder="Confirm Password" />
 									</div>
-									<button type="submit" className="btn btn-primary btn-block" onClick={this.Submit}>Register</button>
+									<button type="submit" className="btn btn-primary btn-block" onClick={this.Submit} style={{"margin-left":"0px"}}>Register</button>
 								</form>
 								<p className="Info">
 									Haven an Account?
-									<Link to="/dangnhap">Đăng nhập</Link>
-									<Link to="/">Trang chủ</Link>
+									<Link to="/dangnhap">Login</Link>
+									<Link to="/">Home</Link>
 								</p>
 							</div>
 						</div>

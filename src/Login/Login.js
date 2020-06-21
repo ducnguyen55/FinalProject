@@ -53,18 +53,18 @@ class Login extends Component {
 								<form onSubmit={this.onSubmit}>
 									<div>
 										<label for="email">Email :</label>
-										<input type="gmail" id="gmail" name="gmail" onChange={this.changeHandler} placeholder="Nhập Email" />
+										<input type="gmail" id="gmail" name="gmail" onChange={this.changeHandler} placeholder="Email" />
 									</div>
 									<div>
 										<label for="password">Password :</label>
-										<input type="password" id="password" name="password" onChange={this.changeHandler} placeholder="Nhập Password" />
+										<input type="password" id="password" name="password" onChange={this.changeHandler} placeholder="Password" />
 									</div>
-									<button type="submit" className="btn btn-primary btn-block" onClick={this.login}>Login</button>
+									<button type="submit" className="btn btn-primary btn-block" onClick={this.login} style={{"margin-left":"0px"}}>Login</button>
 								</form>
 								<p className="Info">
 									No Account?
 									<Link to="/dangky">Register</Link>
-									<Link to="/">Trang chủ</Link>
+									<Link to="/">Home</Link>
 								</p>
 							</div>
 						</div>

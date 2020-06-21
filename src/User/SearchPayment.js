@@ -5,6 +5,7 @@ const SearchBox = ({searchfield, searchChange}) => {
 		<input 
 		id="search-input" 
 		class="form-control input-lg" 
+		size="20"
 		placeholder="Search payment" 
 		onChange={searchChange}
 		/>

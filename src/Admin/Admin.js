@@ -72,38 +72,42 @@ class Admin extends Component {
 		if(!products.length)
 			return <h1>Loading</h1>
 		else{
-			return (
+			return (				
 				<div className="container">
-					<li className="nav_item homebutton">
-						<Link to="/">Back</Link>
-					</li>
+					<a href="#" className="previous"> <Link to="/" style={{ textDecoration: 'none' }}><i class="addicon fa fa-arrow-left"></i>Trở lại</Link></a>
+					<div class="header">
+					
 					<div className="Titile">
 						<h2>Admin Page</h2>
 					</div>
-					<div className="col-sm-12 searchproduct">
-						<div className="col-sm-12 menuAdmin">
+					<div className="menuAdmin">
 							<div className="product-info">
 								<div className="col-sm-9 search">
 									<section id="search">
 										<label for="search-input">
-											<i class="fa fa-search" aria-hidden="true"></i>
+											<i class="fa fa-search searchi" aria-hidden="true"></i>
 											<span class="search-only"></span>
 										</label>
-										<SearchBox searchChange={this.onSearchChange}/>
+										<SearchBox className="search" searchChange={this.onSearchChange}/>
 									</section>
 								</div>
-								<div className="col-sm-3 addproduct">
-									<Link to="/admin/addproduct" className="addbtn btn"><i class="addicon fa fa-plus" aria-hidden="true"></i></Link>
+								<div className="col-sm-3 addproduct"> 
+								<a href="#"className="previouss"> <Link to="/admin/addproduct"className="prev"><i class="addicon fa fa-plus" aria-hidden="true"></i>  Create A Product</Link></a>
 								</div>
 							</div> 
-						</div>
+					</div>
+					</div>
+					
+					<div className=" searchproduct">
 						<div className="productAdmin">
 		                	{renderproduct}
-						</div>
-			            <ul id="page-numbers">
-		              		{renderPageNumbers}
-		            	</ul>
+							<div id="page-numbers" className="page-numbers2">
+						{renderPageNumbers}
 					</div>
+						</div> 
+							
+					</div>
+					
 				</div>
 			);
 		}

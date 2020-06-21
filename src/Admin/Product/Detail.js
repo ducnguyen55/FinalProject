@@ -82,10 +82,8 @@ class Detail extends Component {
 		var pid = parseInt(this.props.match.params.id);
 		const {products} = this.state;
 		return(
-			<div className="container detail">
-				<li className="nav_item homebutton">
-					<Link to="/admin">Trở lại</Link>
-				</li>
+			<div className="container detail">	
+					<a href="#" className="previous"> <Link to="/admin" style={{ textDecoration: 'none' }}><i class="addicon fa fa-arrow-left"></i>Trở lại</Link></a>
 				<h1 className="detailTitle"> SẢN PHẨM </h1>
 				{
 					products.map((product,key) => {
@@ -118,7 +116,7 @@ class Detail extends Component {
 													<label for="">Price :</label>
 													<input type="text" id="price" onChange={this.changeHandler} placeholder="Nhập giá" defaultValue={`${product.price}`} />
 												</div>
-												<button type="submit" className="btn btn-primary btn-block" onClick={this.Update} >Save</button>
+												<button type="submit" className="btn btn-primary btn-block" onClick={this.Update} style={{"margin-left":"0px"}} >Save</button>
 											</form>
 										</div>
 									</div> 

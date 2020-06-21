@@ -103,6 +103,22 @@ class Payment extends Component {
 		{this.Total()};
 		{this.Discount()};
 		var {productincart,totalprice,total} = this.state;
+		if(productincart.length==0)
+			return(
+				<div className="BuyProduct">
+					<header className="App-header">
+						<Menu className='Menu' />
+					</header>
+					<div className="container ProductDetail">
+						<div className="clearFix">
+							<Link to="/" className="Top">Home</Link>
+							<Link to="#" className="Top">Cart</Link>
+						</div>
+						<h3 className="text-center"> Your cart is empty </h3>
+					</div>
+				</div>	
+			)
+		else 
 		return (
 		<div className="BuyProduct">
 			<header className="App-header">

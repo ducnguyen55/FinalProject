@@ -25,9 +25,9 @@ class Account extends Component {
 		{
 			return (
 				<div className="account">
-					<Link to='/dangky' className="nav-link">Đăng ký</Link>
+					<Link to='/dangky' className="nav-link">Sign up!</Link>
 					<span>/</span>
-					<Link to='/dangnhap' className="nav-link">Đăng nhặp</Link>
+					<Link to='/dangnhap' className="nav-link">Login</Link>
 				</div>
 			);
 		}

@@ -61,10 +61,8 @@ class AddProduct extends Component {
 		var { id, type, name, url, price} = this.state;
 		return(
 			<div className="container detail">
-				<li className="nav_item homebutton">
-					<Link to="/admin">Back</Link>
-				</li>
-				<h1 className="detailTitle"> PRODUCT </h1>
+				<a href="#" className="previous"> <Link to="/admin" style={{ textDecoration: 'none' }}><i class="addicon fa fa-arrow-left"></i>Trở lại</Link></a>
+				<h1 className="detailTitle"> SẢN PHẨM </h1>
 				<div className="col-sm-12 productDetail">
 					<div className="product-info">
 						<div className="col-sm-6 image">
@@ -86,17 +84,17 @@ class AddProduct extends Component {
 								</div>
 								<div>
 									<label for="">Name :</label>
-									<input type="text" id="name" name="name" onChange={this.changeHandler} placeholder="Product's name" />
+									<input type="text" id="name" name="name" onChange={this.changeHandler} placeholder="Nhập tên sản phẩm" />
 								</div>
 								<div>
 									<label for="">URL (URL Directly) :</label>
-									<input type="text" id="url"  name="url" onChange={this.changeHandler} placeholder="Url" />
+									<input type="text" id="url"  name="url" onChange={this.changeHandler} placeholder="Nhập đường dẫn" />
 								</div>
 								<div>
 									<label for="">Price :</label>
-									<input type="text" id="price" name="price" onChange={this.changeHandler} placeholder="Price" />
+									<input type="text" id="price" name="price" onChange={this.changeHandler} placeholder="Nhập giá" />
 								</div>
-								<button type="submit" className="addbtn btn btn-primary btn-block">Add Product</button>
+								<button type="submit" className="addbtn btn btn-primary btn-block" style={{"margin-left":"0px"}}>Add Product</button>
 							</form>
 						</div>
 					</div> 

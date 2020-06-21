@@ -69,7 +69,7 @@ class Profile extends Component {
 	}
 	CheckRole(){
 		if(this.state.role=="admin")
-			return <li className="nav_item"><Link to="/admin">Admin Page</Link></li>
+			return <li class="nav-item"><Link to="/admin"> <i class="addicon fa fa-shield"></i>Admin Page</Link></li>
 	}
 	CheckLogin = () =>{
 		if(localStorage.length==0){
@@ -238,35 +238,28 @@ class Profile extends Component {
         else
 		return (
 			<div>
-				<ul>
-					<li className="nav-item">
-						<a href="" onClick={this.logOut} className="nav-link">
-						Logout
-						</a>
-					</li>
-					<li className="nav_item">
-						<Link to="/">Home</Link>
-					</li>
-					<li className="nav_item">
-						<Link to="/profile">Profile</Link>
-					</li>
-					<li className="nav_item">
-						<Link> Purchase history</Link>
-					</li>
+				<div class="sidenav">
+					<li class="nav-item"><Link to="/" style={{}}><i class="addicon fa fa-home"></i>Home Page</Link></li>
+					<li class="nav-item"><Link to="/profile"><i class="addicon fa fa-user"></i>Profile</Link></li>
+					<li class="nav-item"><Link to="/profile/history"> <i class="addicon fa fa-history"></i>Purchase history</Link></li>	
 					{this.CheckRole()}
-				</ul>
-				<div className ="container history-view" id="history-view">
-					<h4 className="text-center">PURCHASE HISTORY</h4>
-					<SearchPayment searchChange={this.onSearchChange}/>
-					<table className="table col-md-12 mx-auto">
+					<li class="nav-item"><a href="" onClick={this.logOut} className="nav-link"> <i class="addicon fa fa-sign-out"></i>Logout</a></li>		
+				</div>
+				<div className ="history-view" id="history-view">
+					<h4 >PURCHASE HISTORY</h4>
+					<div class="search">
+					<i class="searchicon addicon fa fa-search"></i>
+					<SearchPayment  searchChange={this.onSearchChange}/>
+					</div>
+					<table className="table">
 						<tbody>
 							{this.AdminHistory()}
 		                	{renderproduct}
 						</tbody>
 					</table>
-	    	        <ul id="page-numbers" className="text-center">
+	    	        <div id="page-numbers" className="text-center page-numbers1">
             	  		{renderPageNumbers}
-            		</ul>
+            		</div>
 				</div>
 			</div>
 		)
